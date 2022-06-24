@@ -11,7 +11,9 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/pokedex" element={<Home />} />
+        <Route path="/pokedex" element={<Home />}>
+          <Route path="/pokedex/prueba" element={<h2>Elemento de prueba</h2>} />
+        </Route>
       </Routes>
     </div>
   );
