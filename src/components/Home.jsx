@@ -5,19 +5,41 @@ import PokemonsList from './PokemonsList';
 
 const Home = () => {
   const userName = useSelector((state) => state.userName);
-  const [urlsPokemon, setUrlsPokemon] = useState();
   const [pokemons, setPokemons] = useState();
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    getPokemons();
+  }, []);
 
-  useEffect(() => {}, [urlsPokemon]);
+  const getPokemons = () => {
+    axios
+      .get('https://pokeapi.co/api/v2/pokemon/?limit=20&offset=20')
+      .then((res) => {
+        // console.log(res.data.results);
+        const arrayPokemons = [];
+
+        res.data.results.forEach((element) => {
+          axios
+            .get(element.url)
+            .then((res) => {
+              // console.log(res.data);
+              arrayPokemons.push(res.data);
+            })
+            .catch((error) => console.log(error));
+        });
+
+        // setPokemons(arrrayPokemons[0]);
+      })
+      .catch((error) => console.log(error));
+  };
 
   return (
     <div>
-      {urlsPokemon?.map((url) => {
-        <p>{url}</p>;
-      })}
-      <PokemonsList pokemons={pokemons} />
+      {/* <p>hola {userName}</p> */}
+
+      {/* {pokemons?.map((pokemon, i) => {
+        return <p key={i}>{pokemon.name}</p>;
+      })} */}
     </div>
   );
 };
