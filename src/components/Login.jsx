@@ -5,10 +5,8 @@ import { useDispatch } from 'react-redux';
 import { setUserName } from '../store/slices/userName.slice';
 const Login = () => {
   const { register, handleSubmit } = useForm();
-
   //REACT ROUTER
   const navigate = useNavigate();
-
   //REDUX
   const dispatch = useDispatch();
 
