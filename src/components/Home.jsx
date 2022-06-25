@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 import PokemonsList from './PokemonsList';
 
-const Home = () => {
+const Home = ({saludo}) => {
   const userName = useSelector((state) => state.userName);
   const [urlsPokemons, setUrlsPokemons] = useState();
   // const [pokemons, setPokemons] = useState();
@@ -26,13 +26,7 @@ const Home = () => {
   // console.log(urlsPokemons);
   return (
     <div>
-      <header>HEADER</header>
-      <Outlet />
-      {/* {
-        urlsPokemons && <PokemonsList urlsPokemons={urlsPokemons} />
-      } */}
-      <footer>FOOTER</footer>
-
+      <p>Soy el home</p>
     </div>
   );
 }
