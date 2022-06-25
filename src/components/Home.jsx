@@ -7,15 +7,13 @@ import PokemonsList from './PokemonsList';
 const Home = ({saludo}) => {
   const userName = useSelector((state) => state.userName);
   const [urlsPokemons, setUrlsPokemons] = useState();
-  // const [pokemons, setPokemons] = useState();
-
-
+  
   useEffect(() => {
     getPokemons();
   }, []);
 
   const getPokemons = () => {
-    axios.get('https://pokeapi.co/api/v2/pokemon/')
+    axios.get('https://pokeapi.co/api/v2/pokemon/?limit=20&offset=0')
       .then((res) => {
         // console.log(res);
         setUrlsPokemons(res.data.results)
@@ -26,7 +24,9 @@ const Home = ({saludo}) => {
   // console.log(urlsPokemons);
   return (
     <div>
-      <p>Soy el home</p>
+      {
+        urlsPokemons && <PokemonsList urlsPokemons={urlsPokemons} />
+      }
     </div>
   );
 }

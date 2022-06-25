@@ -1,30 +1,27 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import useGetPokemon from '../hooks/useGetPokemon';
 
 const PokemonCard = ({ url }) => {
 
-  const [pokemon,setPokemon] =useState();
-
-  useEffect(() => {
-    getPokemon(url.url)
-  }, [])
-
-  // console.log(url.url);
-  const getPokemon=(url)=>{
-    axios.get(url)
-      .then(res=>{
-        // console.log(res.data);
-        setPokemon(res.data)
-      })
-      .catch(error=>{
-        console.log(error);
-      });
+  const navigate =useNavigate();
+  const [pokemon] = useGetPokemon(url);
+  
+  const goToDetail = (e)=>{
+      // console.log(e);
+      navigate(`/pokedex/${e}`)
   }
-  return(
 
+  
+
+  return (
     <div>
-      <img src={pokemon && pokemon.sprites.front_default} alt={`imagen de ${pokemon?.name}`} />
-      <p>{pokemon?.name}</p>
+      <button onClick={()=>goToDetail(pokemon.id)}>
+        <img src={pokemon && pokemon.sprites.front_default} alt={`imagen de ${pokemon?.name}`} />
+        <p>{pokemon?.name}</p>
+      </button>
+
     </div>
   );
 };
