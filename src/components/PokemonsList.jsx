@@ -2,12 +2,16 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import PokemonCard from './PokemonCard';
 
-const PokemonsList = ({ urlsPokemons }) => {
+const PokemonsList = ({ urlsPokemons,pokemonByName }) => {
 
 
   return (
     <div>
-      {urlsPokemons?.map((url, i) => <PokemonCard url={url} key={url.url} />)}
+      { 
+        pokemonByName 
+        ? <PokemonCard pokemonByName={pokemonByName}/>
+        :urlsPokemons?.map((url, i) => <PokemonCard url={url} key={url?.url} />)
+      }
     </div>
   );
 };

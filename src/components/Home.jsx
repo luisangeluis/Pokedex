@@ -5,13 +5,25 @@ import { Outlet } from 'react-router-dom';
 import PokemonsList from './PokemonsList';
 import SearchPokemon from './SearchPokemon';
 
-const Home = ({saludo}) => {
+const Home = () => {
+  //Redux
   const userName = useSelector((state) => state.userName);
   const [urlsPokemons, setUrlsPokemons] = useState();
+  const [pokemonByName,setPokemonByName] = useState();
   
   useEffect(() => {
-    getPokemons();
-  }, []);
+
+    if(pokemonByName){
+      
+    }else{
+      getPokemons();
+
+    }
+  }, [pokemonByName]);
+
+  // useEffect(()=>{
+
+  // },[pokemonByName])
 
   const getPokemons = () => {
     axios.get('https://pokeapi.co/api/v2/pokemon/?limit=20&offset=0')
@@ -22,13 +34,18 @@ const Home = ({saludo}) => {
       .catch((error) => console.log(error));
   }
 
+  
+
   // console.log(urlsPokemons);
+  console.log(pokemonByName);
   return (
     
     <div>
-      <SearchPokemon />
+      <SearchPokemon setPokemonByName={setPokemonByName}/>
       {
-        urlsPokemons && <PokemonsList urlsPokemons={urlsPokemons} />
+        pokemonByName
+        ?<PokemonsList pokemonByName={pokemonByName} /> 
+        :<PokemonsList urlsPokemons={urlsPokemons} />
       }
     </div>
   );

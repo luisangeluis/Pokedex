@@ -5,7 +5,10 @@ const useGetPokemon = (url) => {
     const [pokemon, setPokemon] = useState();
 
     useEffect(() => {
-        getPokemon(url.url)
+        if(url){
+            getPokemon(url.url)
+
+        }
       }, [url])
 
     // Peticion pokemon

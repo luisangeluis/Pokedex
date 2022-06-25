@@ -21,6 +21,7 @@ const PokemonDetail = () => {
       .catch(error => console.log(error));
   }, [id])
 
+   
   return (
     <div>
       <p>id seleccionado{id}</p>
