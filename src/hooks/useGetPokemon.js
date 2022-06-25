@@ -6,7 +6,7 @@ const useGetPokemon = (url) => {
 
     useEffect(() => {
         getPokemon(url.url)
-      }, [])
+      }, [url])
 
     // Peticion pokemon
     const getPokemon = (url) => {
