@@ -6,8 +6,7 @@ const useGetPokemon = (url) => {
 
     useEffect(() => {
         if(url){
-            getPokemon(url.url)
-
+            getPokemon(url)
         }
       }, [url])
 

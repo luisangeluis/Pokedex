@@ -13,26 +13,22 @@ const PokemonCard = ({ url, pokemonByName }) => {
     navigate(`/pokedex/${e}`)
   }
 
-
-
   return (
 
-    < div >
-
+    <div>
       {
         pokemonByName
-          ? <button onClick={() => goToDetail(pokemonByName.id)}>
-            <img src={pokemonByName.sprites.front_default} alt={`imagen de ${pokemonByName.name}`} />
-            <p>{pokemonByName.name}</p>
-          </button>
-          :<button onClick={() => goToDetail(pokemon.id)}>
-            <img src={pokemon && pokemon.sprites.front_default} alt={`imagen de ${pokemon?.name}`} />
-            <p>{pokemon?.name}</p>
-          </button>
+          ? ''
+          : (
+            <button onClick={() => goToDetail(pokemon.id)}>
+              <div>
+                <img src={pokemon && pokemon.sprites.front_default} alt="" />
+                <div>{pokemon?.name}</div>
+              </div>
+            </button>
+          )
       }
-    </div >
-
-
+    </div>
   );
 };
 
