@@ -1,13 +1,15 @@
 import React from 'react';
 import PokemonCard from './PokemonCard';
 
-const PokemonsList = ({urlsPokemons}) => {
+const PokemonsList = ({urlsPokemons,pokemonByName}) => {
 
   // console.log(urlsPokemons);
   return (
     <div>
       { 
-        urlsPokemons.map(url=><PokemonCard url={url} key={url}/>)
+        pokemonByName 
+        ? <PokemonCard pokemonByName={pokemonByName}/>
+        : urlsPokemons.map(url=><PokemonCard url={url} key={url}/>)
       }
     </div>
   );

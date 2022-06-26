@@ -17,16 +17,12 @@ const PokemonCard = ({ url, pokemonByName }) => {
 
     <div>
       {
-        pokemonByName
-          ? ''
-          : (
-            <button onClick={() => goToDetail(pokemon.id)}>
-              <div>
-                <img src={pokemon && pokemon.sprites.front_default} alt="" />
-                <div>{pokemon?.name}</div>
-              </div>
-            </button>
-          )
+        <button onClick={() => pokemonByName ? goToDetail(pokemonByName.id) : goToDetail(pokemon.id)}>
+          <div>
+            <img src={pokemonByName ? pokemonByName && pokemonByName.sprites.front_default : pokemon && pokemon.sprites.front_default} alt="" />
+            <div>{pokemonByName ? pokemonByName.name : pokemon?.name}</div>
+          </div>
+        </button>
       }
     </div>
   );

@@ -13,21 +13,26 @@ const Home = () => {
 
   useEffect(() => {
 
-    if(pokemonByName){
-
-    }else{
+    if(!pokemonByName){
       getPokemons();
+    }
+  }, [pokemonByName]);
+
+  useEffect(() => {
+    if(urlsPokemons){
+      setPokemonByName()
 
     }
-  }, []);
+  }, [urlsPokemons])
 
-  
+
   const getPokemons = () => {
+    console.log('obteniendo todos los pokemon');
     axios.get('https://pokeapi.co/api/v2/pokemon/?limit=20&offset=0')
       .then((res) => {
         // console.log(res.data.results);
-        let urls=[];
-        res.data.results.forEach(url=>{
+        let urls = [];
+        res.data.results.forEach(url => {
           // console.log(url.url);
           urls.push(url.url)
         })
@@ -39,12 +44,12 @@ const Home = () => {
   // console.log(urlsPokemons);
   return (
     <div>
-      <SearchPokemon setPokemonByName={setPokemonByName}/>
-      <SelectPokemonTypes setUrlsPokemons={setUrlsPokemons} getPokemons={getPokemons}/>
+      <SearchPokemon setPokemonByName={setPokemonByName} />
+      <SelectPokemonTypes setUrlsPokemons={setUrlsPokemons} getPokemons={getPokemons} />
       {
-        pokemonByName 
-        ? ''
-        :urlsPokemons && <PokemonsList urlsPokemons={urlsPokemons}/>
+        pokemonByName
+          ? <PokemonsList pokemonByName={pokemonByName} />
+          : urlsPokemons && <PokemonsList urlsPokemons={urlsPokemons} />
       }
     </div>
   );
