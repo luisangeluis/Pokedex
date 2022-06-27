@@ -8,28 +8,17 @@ import PokemonsList from './components/PokemonsList';
 import MainLayout from './components/MainLayout';
 
 function App() {
-
   const saludo = 'hola';
   return (
     <div className="App">
-      {/* <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path='/' element={<MainLayout />}>
-          <Route path='pokedex' element={<Home saludo={saludo}/>} />
-          <Route path='/pokedex/:id' element={<PokemonDetail />} />
-          <Route path='*' element={<h2>ruta no existe</h2>} />
-        </Route>
-      </Routes> */}
-
       <Routes>
-        <Route path='/' element={<Login />} />
+        <Route path="/" element={<Login />} />
         <Route element={<MainLayout />}>
-          <Route path='/pokedex/' element={<Home />} />
-          <Route path='/pokedex/:id' element={<PokemonDetail />} />
-          <Route path='/*' element={<h2>Ruta no existe</h2>} />
+          <Route path="/pokedex/" element={<Home />} />
+          <Route path="/pokedex/:id" element={<PokemonDetail />} />
+          <Route path="/*" element={<h2>Ruta no existe</h2>} />
         </Route>
       </Routes>
-
     </div>
   );
 }

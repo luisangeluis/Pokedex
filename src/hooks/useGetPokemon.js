@@ -1,29 +1,29 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 
 const useGetPokemon = (url) => {
   const [pokemon, setPokemon] = useState();
 
   useEffect(() => {
     if (url) {
-      getPokemon(url)
+      getPokemon(url);
     }
-  }, [url])
+  }, [url]);
 
   // Peticion pokemon
   const getPokemon = (url) => {
-    axios.get(url)
-      .then(res => {
+    axios
+      .get(url)
+      .then((res) => {
         // console.log(res.data);
-        setPokemon(res.data)
+        setPokemon(res.data);
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(error);
       });
-  }
+  };
 
   return [pokemon];
+};
 
-}
-
-export default useGetPokemon
+export default useGetPokemon;

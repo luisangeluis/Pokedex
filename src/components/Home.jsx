@@ -12,47 +12,53 @@ const Home = () => {
   const [pokemonByName, setPokemonByName] = useState();
 
   useEffect(() => {
-
-    if(!pokemonByName){
+    if (!pokemonByName) {
       getPokemons();
     }
   }, [pokemonByName]);
 
   useEffect(() => {
-    if(urlsPokemons){
-      setPokemonByName()
-
+    if (urlsPokemons) {
+      setPokemonByName();
     }
-  }, [urlsPokemons])
-
+  }, [urlsPokemons]);
 
   const getPokemons = () => {
     console.log('obteniendo todos los pokemon');
-    axios.get('https://pokeapi.co/api/v2/pokemon/?limit=20&offset=0')
+    axios
+      .get('https://pokeapi.co/api/v2/pokemon/?limit=20&offset=0')
       .then((res) => {
+        // console.log(res);
         // console.log(res.data.results);
         let urls = [];
-        res.data.results.forEach(url => {
+        res.data.results.forEach((url) => {
           // console.log(url.url);
-          urls.push(url.url)
-        })
+          urls.push(url.url);
+        });
         // console.log(urls);
         setUrlsPokemons(urls);
       })
       .catch((error) => console.log(error));
-  }
+  };
   // console.log(urlsPokemons);
   return (
-    <div>
-      <SearchPokemon setPokemonByName={setPokemonByName} />
-      <SelectPokemonTypes setUrlsPokemons={setUrlsPokemons} getPokemons={getPokemons} />
-      {
-        pokemonByName
-          ? <PokemonsList pokemonByName={pokemonByName} />
-          : urlsPokemons && <PokemonsList urlsPokemons={urlsPokemons} />
-      }
-    </div>
+    <section className="row">
+      <div className="col-12">
+        <section className="row">
+          <SearchPokemon setPokemonByName={setPokemonByName} />
+          <SelectPokemonTypes
+            setUrlsPokemons={setUrlsPokemons}
+            getPokemons={getPokemons}
+          />
+        </section>
+        {pokemonByName ? (
+          <PokemonsList pokemonByName={pokemonByName} />
+        ) : (
+          urlsPokemons && <PokemonsList urlsPokemons={urlsPokemons} />
+        )}
+      </div>
+    </section>
   );
-}
+};
 
 export default Home;
