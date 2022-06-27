@@ -21,24 +21,36 @@ const PokemonCard = ({ url, pokemonByName }) => {
     return stringInfo;
   };
 
+  const getCardColor = () => {
+    const colors = ['bg-orange'];
+    return colors[0];
+  };
+
   console.log(pokemonByName);
   console.log(pokemon);
 
   return (
     <div className="col-md-4 col-lg-3">
-      <div className="card my-2 my-md-3">
+      <div
+        className={`card my-2 my-md-3 bg-${
+          pokemonByName
+            ? pokemonByName.types[0].type.name
+            : pokemon?.types[0].type.name
+        }`}
+      >
         <button
           onClick={() =>
             pokemonByName
               ? goToDetail(pokemonByName.id)
               : goToDetail(pokemon.id)
           }
+          style={{ backgroundColor: 'transparent' }}
         >
           <img
             src={
               pokemonByName
                 ? pokemonByName.sprites.other['official-artwork'].front_default
-                : pokemon && pokemon.sprites.front_default
+                : pokemon?.sprites.other['official-artwork'].front_default
             }
             className="img-fluid"
             alt=""
@@ -52,7 +64,7 @@ const PokemonCard = ({ url, pokemonByName }) => {
                 ? getTypesDescription(pokemonByName?.types)
                 : getTypesDescription(pokemon?.types)}
             </p>
-            <p className="card-text">Tipo</p>
+            <p className="card-text">Type</p>
             <hr />
             <section className="card-text row">
               <div className="col-6">
