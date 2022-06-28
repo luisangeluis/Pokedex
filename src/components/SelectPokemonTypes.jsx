@@ -1,18 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
-const SelectPokemonTypes = ({ setUrlsPokemons, getPokemons, resetSelect }) => {
+const SelectPokemonTypes = ({ setUrlsPokemons, getPokemons }) => {
   const [pokemonTypesOptions, setPokemonTypesOptions] = useState();
 
   useEffect(() => {
     getPokemonTypes();
   }, []);
-
-  useEffect(() => {
-    if (resetSelect) {
-      getPokemonTypes();
-    }
-  }, [resetSelect]);
 
   const getPokemonTypes = () => {
     const url = 'https://pokeapi.co/api/v2/type';

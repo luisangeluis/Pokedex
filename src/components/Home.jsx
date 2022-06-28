@@ -10,7 +10,6 @@ const Home = () => {
   const userName = useSelector((state) => state.userName);
   const [urlsPokemons, setUrlsPokemons] = useState();
   const [pokemonByName, setPokemonByName] = useState();
-  const [resetSelect, setResetSelect] = useState(false);
 
   useEffect(() => {
     if (!pokemonByName && !urlsPokemons) {
@@ -49,14 +48,10 @@ const Home = () => {
           Bienvenido "{userName}" aqui podras encontrar a tu pokemon favorito
         </section>
         <section className="row">
-          <SearchPokemon
-            setPokemonByName={setPokemonByName}
-            setResetSelect={setResetSelect}
-          />
+          <SearchPokemon setPokemonByName={setPokemonByName} />
           <SelectPokemonTypes
             setUrlsPokemons={setUrlsPokemons}
             getPokemons={getPokemons}
-            resetSelect={resetSelect}
           />
         </section>
         {pokemonByName ? (

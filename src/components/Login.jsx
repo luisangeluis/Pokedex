@@ -55,7 +55,7 @@ const Login = () => {
               </div>
             </div>
             <div className="col-8">
-              <img src="src/assets/squirtle.png" alt="" className="img-fluid" />
+              {/* <img src="src/assets/squirtle.png" alt="" className="img-fluid" /> */}
             </div>
           </div>
         </div>
