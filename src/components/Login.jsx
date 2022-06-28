@@ -22,21 +22,26 @@ const Login = () => {
   return (
     <div className="login h-100 d-flex justify-content-center align-items-center">
       <div className="container login-container text-center">
-        <h1>Pokedex</h1>
-        <h2>Hello trainer!</h2>
-        <p>Give me your name to start</p>
-        <form onSubmit={handleSubmit(makeUserName)}>
-          <div className="mb-3">
-            <input
-              type="text"
-              placeholder="Your name is"
-              {...register('userName', { required: true })}
-            />
+        <div className="card">
+          <div className="card-body">
+            <h1>Pokedex</h1>
+            <h2>Hello trainer!</h2>
+            <p className="card-title">Give me your name to start</p>
+            <form onSubmit={handleSubmit(makeUserName)}>
+              <div className="mb-3">
+                <input
+                  type="text"
+                  placeholder="Your name is"
+                  {...register('userName', { required: true })}
+                />
+              </div>
+              <button type="submit" className="btn btn-primary">
+                Login
+              </button>
+            </form>
           </div>
-          <button type="submit" className="btn btn-primary">
-            Login
-          </button>
-        </form>
+          <img src="../assets/squirtle.png" alt="" />
+        </div>
       </div>
     </div>
   );
