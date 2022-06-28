@@ -12,10 +12,10 @@ const Home = () => {
   const [pokemonByName, setPokemonByName] = useState();
 
   useEffect(() => {
-    if (!pokemonByName) {
+    if (!pokemonByName && !urlsPokemons) {
       getPokemons();
     }
-  }, [pokemonByName]);
+  }, []);
 
   useEffect(() => {
     if (urlsPokemons) {
@@ -44,6 +44,9 @@ const Home = () => {
   return (
     <section className="row">
       <div className="col-12">
+        <section className="row">
+          Bienvenido "{userName}" aqui podras encontrar a tu pokemon favorito
+        </section>
         <section className="row">
           <SearchPokemon setPokemonByName={setPokemonByName} />
           <SelectPokemonTypes

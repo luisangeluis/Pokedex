@@ -6,7 +6,22 @@
 button {
   border-style: none;
 }
-
+html,
+body,
+#root,
+.App {
+  height: 100%;
+}
+/***********Login***********/
+/**************************/
+.login {
+  background-color: whitesmoke;
+}
+.login-container {
+  min-height: 50vh;
+}
+/*********End**Login********/
+/**************************/
 .card-body {
   background-color: whitesmoke;
 }
