@@ -3,6 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { setUserName } from '../store/slices/userName.slice';
+import imagen from '../assets/squirtle.png';
+import reactLogo from '../assets/react.svg';
+
 const Login = () => {
   const { register, handleSubmit } = useForm();
   //REACT ROUTER
@@ -29,7 +32,7 @@ const Login = () => {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-4">
+            <div className="col-4">
               <div className="card-body h-100 d-flex justify-content-center flex-column align-items-center border border-2 border-info rounded">
                 <p className="card-title text-white">Pokedex</p>
                 <p className="card-text text-white">Hello trainer!</p>
@@ -51,12 +54,8 @@ const Login = () => {
                 </form>
               </div>
             </div>
-            <div className="col-md-8">
-              <img
-                src="../src/assets/squirtle.png"
-                alt=""
-                className="img-fluid"
-              />
+            <div className="col-8">
+              <img src="src/assets/squirtle.png" alt="" className="img-fluid" />
             </div>
           </div>
         </div>
