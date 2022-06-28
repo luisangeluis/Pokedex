@@ -12,19 +12,26 @@ body,
 .App {
   height: 100%;
 }
+
 /***********Login***********/
 /**************************/
 .login {
-  background-color: whitesmoke;
+  background-color: #e04644;
 }
 .login-container {
   min-height: 50vh;
 }
-/*********End**Login********/
-/**************************/
-.card-body {
+.login .card {
   background-color: whitesmoke;
 }
+.login .card .card-body {
+  background-color: #e04644;
+}
+.img-login {
+  max-width: 50%;
+}
+/*********End**Login********/
+/**************************/
 
 /* //Backgrounds pokemon  */
 

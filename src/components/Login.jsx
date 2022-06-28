@@ -20,30 +20,48 @@ const Login = () => {
     navigate('/pokedex');
   };
   return (
-    <div className="login h-100 d-flex justify-content-center align-items-center">
-      <div className="container login-container text-center">
-        <div className="card">
-          <div className="card-body">
-            <h1>Pokedex</h1>
-            <h2>Hello trainer!</h2>
-            <p className="card-title">Give me your name to start</p>
-            <form onSubmit={handleSubmit(makeUserName)}>
-              <div className="mb-3">
-                <input
-                  type="text"
-                  placeholder="Your name is"
-                  {...register('userName', { required: true })}
-                />
-              </div>
-              <button type="submit" className="btn btn-primary">
-                Login
-              </button>
-            </form>
+    <section className="login h-100 d-flex justify-content-center align-items-center">
+      <div className="container login-container text-center d-flex justify-content-center align-items-center">
+        <div className="card border-0 p-3 p-md-5">
+          <div className="row">
+            <div className="col-12">
+              <h1>Pokemon</h1>
+            </div>
           </div>
-          <img src="../assets/squirtle.png" alt="" />
+          <div className="row">
+            <div className="col-md-4">
+              <div className="card-body h-100 d-flex justify-content-center flex-column align-items-center border border-2 border-info rounded">
+                <p className="card-title text-white">Pokedex</p>
+                <p className="card-text text-white">Hello trainer!</p>
+                <p className="card-text text-white">
+                  Give me your name to start
+                </p>
+                <form onSubmit={handleSubmit(makeUserName)}>
+                  <div className="mb-3">
+                    <input
+                      type="text"
+                      placeholder="Your name is"
+                      {...register('userName', { required: true })}
+                      className="form-control"
+                    />
+                  </div>
+                  <button type="submit" className="btn btn-danger">
+                    Login
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div className="col-md-8">
+              <img
+                src="../src/assets/squirtle.png"
+                alt=""
+                className="img-fluid"
+              />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
