@@ -1,12 +1,20 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
-const SelectPokemonTypes = ({ setUrlsPokemons, getPokemons }) => {
+const SelectPokemonTypes = ({ setUrlsPokemons, getPokemons, resetSelect }) => {
+  const select = useRef(null);
   const [pokemonTypesOptions, setPokemonTypesOptions] = useState();
 
   useEffect(() => {
     getPokemonTypes();
   }, []);
+
+  useEffect(() => {
+    // if (resetSelect) {
+    //   console.log('RESETEANDO');
+    getResetSelect();
+    // }
+  }, [resetSelect]);
 
   const getPokemonTypes = () => {
     const url = 'https://pokeapi.co/api/v2/type';
@@ -45,9 +53,14 @@ const SelectPokemonTypes = ({ setUrlsPokemons, getPokemons }) => {
     }
   };
 
+  const getResetSelect = () => {
+    console.log(select.current);
+    select.current.value = '';
+  };
+
   return (
     <div className="col-md-6">
-      <select onChange={getPokemonsByType}>
+      <select onChange={getPokemonsByType} ref={select}>
         <option value="">Selecciona un tipo</option>
         <option value="todos">Todos los pokemones</option>
         {pokemonTypesOptions &&
@@ -59,6 +72,7 @@ const SelectPokemonTypes = ({ setUrlsPokemons, getPokemons }) => {
             );
           })}
       </select>
+      <button onClick={getResetSelect}>click</button>
     </div>
   );
 };

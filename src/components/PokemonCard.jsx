@@ -26,8 +26,8 @@ const PokemonCard = ({ url, pokemonByName }) => {
     return colors[0];
   };
 
-  console.log(pokemonByName);
-  console.log(pokemon);
+  // console.log(pokemonByName);
+  // console.log(pokemon);
 
   return (
     <div className="col-md-4 col-lg-3">
