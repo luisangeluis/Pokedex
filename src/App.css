@@ -107,6 +107,38 @@ body,
 .saludo span {
   color: rgb(237, 27, 36);
 }
+
+.pokemon-list .card {
+  max-height: 600px;
+}
+.pokemon-list .card button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* height: 100px; */
+}
+
+.pokemon-list .card .card-body {
+  max-height: 350px;
+  width: 100%;
+}
+
+.pokemon-list .card img {
+  max-height: 150px;
+  margin-bottom: -3vh;
+  position: relative;
+}
+
+.pokemon-list .card .card-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.pokemon-list .card p,
+.pokemon-list .card hr {
+  margin: 0;
+}
 /*********End Home**********/
 /**************************/
 
@@ -117,16 +149,19 @@ body,
   /* fire type */
   background-color: #fe5000;
   border: solid 7px #fe500050;
+  color: #fe5000;
 }
 .bg-grass {
   /* grass type */
   background-color: #84bd00;
   border: solid 7px #84bd0050;
+  color: #84bd00;
 }
 .bg-bug {
   /* bug type */
   background-color: #009f4d;
   border: solid 7px #009f4d50;
+  color: #009f4d;
 }
 
 .bg-water {

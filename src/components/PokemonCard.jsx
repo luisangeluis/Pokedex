@@ -39,6 +39,11 @@ const PokemonCard = ({ url, pokemonByName }) => {
               : goToDetail(pokemon.id)
           }
           style={{ backgroundColor: 'transparent' }}
+          className={`bg-${
+            pokemonByName
+              ? pokemonByName.types[0].type.name
+              : pokemon?.types[0].type.name
+          }`}
         >
           <img
             src={
@@ -50,7 +55,7 @@ const PokemonCard = ({ url, pokemonByName }) => {
             alt=""
           />
           <div className="card-body bg-light rounded-2 border-light border-2">
-            <div className="title">
+            <div className="title mt-2 mt-md-3 card-name">
               {pokemonByName ? pokemonByName.name : pokemon?.name}
             </div>
             <p className="card-text">

@@ -3,7 +3,7 @@ import PokemonCard from './PokemonCard';
 
 const PokemonsList = ({ urlsPokemons, pokemonByName }) => {
   return (
-    <article className="row">
+    <article className="row pokemon-list">
       {pokemonByName ? (
         <PokemonCard pokemonByName={pokemonByName} />
       ) : (
