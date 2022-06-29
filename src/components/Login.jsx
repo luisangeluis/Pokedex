@@ -24,7 +24,7 @@ const Login = () => {
   };
   return (
     <section className="login h-100 d-flex justify-content-center align-items-center">
-      <div className="container login-container text-center d-flex  flex-column justify-content-evenly align-items-center h-100">
+      <div className="container login-container text-center d-flex  flex-column justify-content-center align-items-center h-100">
         <div className="row my-2 my-md-3 p-2 p-md-3 w-100 logo">
           <div className="col-12">
             <h1 className="main-title">Pokemon</h1>
