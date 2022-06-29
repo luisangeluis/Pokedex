@@ -10,36 +10,50 @@ html,
 body {
   height: 100%;
   min-width: 100%;
-  background-image: url(https://www.toptal.com/designers/subtlepatterns/uploads/45degreee_fabric.png);
+  /* background-image: url(https://www.toptal.com/designers/subtlepatterns/uploads/45degreee_fabric.png); */
 }
 
 body {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* background-color: rgb(89, 179, 136); */
+  background-color: rgb(237, 27, 36);
 }
 /***********Login***********/
 /**************************/
 .main-title {
+  font-size: 6rem;
+  font-family: 'League Gothic', sans-serif;
+  word-spacing: 0.5rem;
+  line-height: 0.5em;
+  letter-spacing: 10px;
+  font-weight: bold;
+}
+.subtitle-1 {
   font-size: 3rem;
-  /* color: rgb(172, 172, 14); */
+  font-weight: bold;
 }
-.logo {
-  background-image: url(https://cdn.mos.cms.futurecdn.net/nJqzZf3iyhawJfofUMicFV-970-80.jpg.webp);
-
-  /* min-height: 10rem;
-  width: 20rem; */
-}
-.login {
-  /* background-color: red; */
+.subtitle-2 {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .login .card {
-  background-color: transparent;
   min-height: 60vh;
+  background-color: rgb(237, 27, 36);
 }
 .login .card .card-body {
-  background-color: #e04644;
+  color: black;
+  /* background-color: rgb(237, 27, 36, 0.9); */
+  background-color: rgb(89, 179, 136);
+}
+.btn-login {
+  background-color: rgb(89, 179, 136);
+}
+.btn-login:hover {
+  opacity: 0.8;
+  font-weight: bolder;
 }
 
 /*********End**Login********/

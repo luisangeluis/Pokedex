@@ -25,20 +25,27 @@ const Login = () => {
   return (
     <section className="login h-100 d-flex justify-content-center align-items-center">
       <div className="container login-container text-center d-flex  flex-column justify-content-evenly align-items-center h-100">
-        <div className="row my-2 my-md-3 p-2 p-md-3 ">
-          <div className="col-12 logo">
-            <p>lorem10</p>
+        <div className="row my-2 my-md-3 p-2 p-md-3 w-100 logo">
+          <div className="col-12">
+            <h1 className="main-title">Pokemon</h1>
           </div>
         </div>
         <div className="row ">
           <div className="col-12">
-            <div className="card border-0 p-2 p-md-3  justify-content-stretch  align-items-center">
-              <div className="row flex-grow-1">
+            <div className="card border border-3 p-2 p-md-3  justify-content-stretch  align-items-center">
+              <div className="row flex-grow-1 ">
+                <div className="col-md-6 d-flex justify-content-center align-items-center ">
+                  <img
+                    src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c31a.png"
+                    alt=""
+                    className="img-fluid w-75 p-2 p-md-3"
+                  />
+                </div>
                 <div className="col-md-6">
-                  <div className="card-body border border-3 border-info rounded w-75 h-100 mx-auto d-flex flex-column justify-content-evenly alig-items-center">
-                    <p className="card-title text-white">Pokedex</p>
-                    <p className="card-text text-white">Hello trainer!</p>
-                    <p className="card-text text-white">
+                  <div className="card-body border border-2 border-light rounded-2 w-75 h-100 mx-auto d-flex flex-column justify-content-center alig-items-center">
+                    <p className="card-title subtitle-1">Pokedex</p>
+                    <p className="card-text subtitle-2 ">Hello trainer!</p>
+                    <p className="card-text subtitle-2 ">
                       Give me your name to start
                     </p>
                     <form onSubmit={handleSubmit(makeUserName)}>
@@ -50,19 +57,14 @@ const Login = () => {
                           className="form-control"
                         />
                       </div>
-                      <button type="submit" className="btn btn-danger">
+                      <button
+                        type="submit"
+                        className="btn btn-login border border-1"
+                      >
                         Login
                       </button>
                     </form>
                   </div>
-                </div>
-                <div className="col-md-6 d-flex justify-content-center align-items-center">
-                  {/* <img src={imagen} alt="" className="img-fluid w-50" /> */}
-                  <img
-                    src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c31a.png"
-                    alt=""
-                    className="img-fluid w-75"
-                  />
                 </div>
               </div>
             </div>
