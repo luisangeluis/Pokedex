@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { setUserName } from '../store/slices/userName.slice';
-import imagen from '../assets/squirtle.png';
-import reactLogo from '../assets/react.svg';
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
@@ -14,6 +12,7 @@ const Login = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log('Naciendo');
     dispatch(setUserName(null));
   }, []);
 

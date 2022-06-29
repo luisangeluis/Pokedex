@@ -59,8 +59,12 @@ const SelectPokemonTypes = ({ setUrlsPokemons, getPokemons, resetSelect }) => {
   };
 
   return (
-    <div className="col-md-6">
-      <select onChange={getPokemonsByType} ref={select}>
+    <div className="col-md-6 d-flex justify-content-center align-items-center p-2 p-md-3">
+      <select
+        onChange={getPokemonsByType}
+        ref={select}
+        className="form-select w-50"
+      >
         <option value="">Selecciona un tipo</option>
         <option value="todos">Todos los pokemones</option>
         {pokemonTypesOptions &&
@@ -72,7 +76,7 @@ const SelectPokemonTypes = ({ setUrlsPokemons, getPokemons, resetSelect }) => {
             );
           })}
       </select>
-      <button onClick={getResetSelect}>click</button>
+      {/* <button onClick={getResetSelect}>click</button> */}
     </div>
   );
 };

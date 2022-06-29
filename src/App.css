@@ -11,22 +11,19 @@ html {
   min-height: 100%;
   position: relative;
 }
-
-body {
+body,
+#root,
+.App {
   background-color: rgb(237, 27, 36);
-  width: 100%;
   height: 100%;
+  width: 100%;
   position: absolute;
   top: 0;
+  left: 0;
+  right: 0;
   bottom: 0;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-  min-height: 100%;
 }
-#root {
-}
+
 /***********Login***********/
 /**************************/
 .main-title {
@@ -66,7 +63,55 @@ body {
 /*********End**Login********/
 /**************************/
 
-/* //Backgrounds pokemon  */
+/*************Header**********/
+/**************************/
+.header .container {
+  min-height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header > row {
+  flex-grow: 1;
+  height: 100%;
+}
+.header .main-title {
+  font-size: 5rem;
+  font-family: 'League Gothic', sans-serif;
+  word-spacing: 0;
+  line-height: 0;
+  letter-spacing: 5px;
+  font-weight: bolder;
+}
+/************End header**********/
+/**************************/
+
+/************filters**********/
+/**************************/
+.filters {
+  min-height: 3rem;
+  background-color: whitesmoke;
+  border-radius: 2rem;
+}
+/*********End filters**********/
+/**************************/
+
+/*************Home**********/
+/**************************/
+.saludo {
+  font-weight: bolder;
+  background-color: rgb(89, 179, 136);
+  font-size: 1.5rem;
+}
+.saludo span {
+  color: rgb(237, 27, 36);
+}
+/*********End Home**********/
+/**************************/
+
+/*****backgrounds pokemon****/
+/**************************/
 
 .bg-fire {
   /* fire type */
@@ -170,3 +215,6 @@ body {
   background-color: #caccd1;
   border: solid 7px #caccd150;
 }
+
+/*****End***backgrounds**pokemon****/
+/**************************/

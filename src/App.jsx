@@ -4,13 +4,10 @@ import Login from './components/Login';
 import Home from './components/Home';
 import PokemonDetail from './components/PokemonDetail';
 import MainLayout from './components/MainLayout';
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { setUserName } from './store/slices/userName.slice';
+import { useSelector } from 'react-redux';
 
 function App() {
   const userName = useSelector((state) => state.userName);
-  const dispatch = useDispatch();
 
   return (
     <div className="App">

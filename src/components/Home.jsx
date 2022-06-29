@@ -45,10 +45,13 @@ const Home = () => {
   return (
     <section className="row">
       <div className="col-12">
-        <section className="row">
-          Bienvenido "{userName}" aqui podras encontrar a tu pokemon favorito
+        <section className="row saludo my-2 my-md-3 p-2 p-md-3 rounded border border-3 border-light">
+          <div className="col-12">
+            Bienvenido "<span className=".subtitle-2">{userName}</span>" aqui
+            podras encontrar a tu pokemon favorito
+          </div>
         </section>
-        <section className="row">
+        <section className="row filters p-2 p-md-3">
           <SearchPokemon
             setPokemonByName={setPokemonByName}
             resetSelect={resetSelect}

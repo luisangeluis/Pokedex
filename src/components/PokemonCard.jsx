@@ -20,17 +20,11 @@ const PokemonCard = ({ url, pokemonByName }) => {
 
     return stringInfo;
   };
-
-  const getCardColor = () => {
-    const colors = ['bg-orange'];
-    return colors[0];
-  };
-
   // console.log(pokemonByName);
   // console.log(pokemon);
 
   return (
-    <div className="col-md-4 col-lg-3">
+    <div className="col-md-6 col-lg-3">
       <div
         className={`card my-2 my-md-3 bg-${
           pokemonByName
@@ -55,7 +49,7 @@ const PokemonCard = ({ url, pokemonByName }) => {
             className="img-fluid"
             alt=""
           />
-          <div className="card-body">
+          <div className="card-body bg-light rounded-2 border-light border-2">
             <div className="title">
               {pokemonByName ? pokemonByName.name : pokemon?.name}
             </div>
