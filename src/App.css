@@ -7,29 +7,41 @@ button {
   border-style: none;
 }
 html,
-body,
-#root,
-.App {
+body {
   height: 100%;
+  min-width: 100%;
+  background-image: url(https://www.toptal.com/designers/subtlepatterns/uploads/45degreee_fabric.png);
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /***********Login***********/
 /**************************/
+.main-title {
+  font-size: 3rem;
+  /* color: rgb(172, 172, 14); */
+}
+.logo {
+  background-image: url(https://cdn.mos.cms.futurecdn.net/nJqzZf3iyhawJfofUMicFV-970-80.jpg.webp);
+
+  /* min-height: 10rem;
+  width: 20rem; */
+}
 .login {
-  background-color: #e04644;
+  /* background-color: red; */
 }
-.login-container {
-  min-height: 50vh;
-}
+
 .login .card {
-  background-color: whitesmoke;
+  background-color: transparent;
+  min-height: 60vh;
 }
 .login .card .card-body {
   background-color: #e04644;
 }
-.img-login {
-  max-width: 50%;
-}
+
 /*********End**Login********/
 /**************************/
 
