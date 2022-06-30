@@ -31,20 +31,20 @@ const PokemonDetail = () => {
                 className="img-fluid"
               />
               <div className="card-body">
-                <div className="d-flex justify-content-around">
+                <div className="d-flex justify-content-around alig-items-center">
                   <div>
-                    <p className="fw-bold">{pokemon?.weight}</p>
-                    <p className="color-gray">Weight</p>
+                    <p className="fw-bold m-0">{pokemon?.weight}</p>
+                    <p className="color-gray m-0">Weight</p>
                   </div>
                   <div>
-                    <p className="fw-bold">{pokemon?.height}</p>
-                    <p className="color-gray">Height</p>
+                    <p className="fw-bold m-0">{pokemon?.height}</p>
+                    <p className="color-gray m-0">Height</p>
                   </div>
                 </div>
                 <div className="d-flex flex-column">
                   <p className="card-text m-0 fw-bold fs-2">{pokemon?.name}</p>
                   <hr className="m-0" />
-                  <p className="card-text m-0 mx-auto fs-3 border border-1">
+                  <p className="card-text my-1 mx-auto fs-3 border border-1">
                     #{pokemon?.id}
                   </p>
                 </div>
