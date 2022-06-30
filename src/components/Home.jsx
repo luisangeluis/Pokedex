@@ -27,7 +27,7 @@ const Home = () => {
   const getPokemons = () => {
     console.log('obteniendo todos los pokemon');
     axios
-      .get('https://pokeapi.co/api/v2/pokemon/?limit=20&offset=0')
+      .get('https://pokeapi.co/api/v2/pokemon/?limit=3000&offset=0')
       .then((res) => {
         // console.log(res);
         // console.log(res.data.results);
@@ -47,7 +47,7 @@ const Home = () => {
       <div className="col-12">
         <section className="row saludo my-2 my-md-3 p-2 p-md-3 rounded border border-3 border-light">
           <div className="col-12">
-            Welcome "<span className=".subtitle-2">{userName}</span>." Here you
+            Welcome "<span className=".subtitle-2">{userName}</span>". Here you
             can find your favorite pokemon.
           </div>
         </section>

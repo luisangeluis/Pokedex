@@ -24,13 +24,15 @@ const PokemonDetail = () => {
       <div className="col-md-8 my-2 my-md-3">
         <div className="row">
           <div className="col-12">
-            <section className={`card p-2 p-md-3 main-card_details`}>
+            <section
+              className={`card p-2 p-md-3 main-card_details bg-${pokemon?.types[0].type.name}`}
+            >
               <img
                 src={pokemon?.sprites.other['official-artwork'].front_default}
                 alt={`imagen de ${pokemon?.name}`}
                 className="img-fluid"
               />
-              <div className="card-body">
+              <div className="card-body bg-light">
                 <div className="d-flex justify-content-around alig-items-center">
                   <div>
                     <p className="fw-bold m-0">{pokemon?.weight}</p>
@@ -100,8 +102,10 @@ const PokemonDetail = () => {
       <div className="col-md-4 my-2 my-md-3">
         <div className="row">
           <div className="col-12">
-            <section className="card movements">
-              <div className="card-body">
+            <section
+              className={`card movements bg-${pokemon?.types[0].type.name}`}
+            >
+              <div className="card-body text-dark bg-light">
                 <div className="card-title text-center fw-bold">
                   <hr className="d-inline w-50" /> Movements
                 </div>

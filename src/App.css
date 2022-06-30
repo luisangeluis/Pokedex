@@ -117,6 +117,9 @@ body,
   color: rgb(237, 27, 36);
 }
 
+.pokemon-list {
+  padding: 0 1rem;
+}
 .pokemon-list .card {
   max-height: 600px;
 }
@@ -173,6 +176,46 @@ body,
   margin: 0.2rem;
 }
 /*********End pokemon details**********/
+/******************************/
+
+/*********PAGINATION**********/
+/******************************/
+.pagination.container {
+  /* display: flex; */
+  margin: 1rem auto;
+  padding: 1rem 2rem;
+  min-height: 3rem;
+  background-color: whitesmoke;
+}
+.pagination.container .ul-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: bold;
+}
+.ul-pagination li {
+  padding: 0.5rem;
+}
+.ul-pagination .btn {
+  background-color: rgb(89, 179, 136);
+}
+.pagination-disabled {
+  /* background-color: blue; */
+}
+.pagination-active {
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*********END PAGINATION**********/
 /******************************/
 
 /*****backgrounds pokemon****/

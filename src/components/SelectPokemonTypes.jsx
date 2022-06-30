@@ -28,7 +28,7 @@ const SelectPokemonTypes = ({ setUrlsPokemons, getPokemons, resetSelect }) => {
   };
 
   const getPokemonsByType = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     let url = e.target.value;
 
     if (url != '') {
@@ -45,7 +45,7 @@ const SelectPokemonTypes = ({ setUrlsPokemons, getPokemons, resetSelect }) => {
               // console.log(element.pokemon.url);
               urls.push(element.pokemon.url);
             });
-            console.log(urls);
+            // console.log(urls);
             setUrlsPokemons(urls);
           })
           .catch((error) => console.log(error));

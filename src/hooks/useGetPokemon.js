@@ -15,7 +15,7 @@ const useGetPokemon = (url) => {
     axios
       .get(url)
       .then((res) => {
-        console.log(res.data);
+        // console.log(res.data);
         setPokemon(res.data);
       })
       .catch((error) => {
