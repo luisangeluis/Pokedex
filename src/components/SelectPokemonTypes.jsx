@@ -65,8 +65,8 @@ const SelectPokemonTypes = ({ setUrlsPokemons, getPokemons, resetSelect }) => {
         ref={select}
         className="form-select w-50"
       >
-        <option value="">Selecciona un tipo</option>
-        <option value="todos">Todos los pokemones</option>
+        <option value="">Select a type</option>
+        <option value="todos">All pokemons</option>
         {pokemonTypesOptions &&
           pokemonTypesOptions.map((option) => {
             return (

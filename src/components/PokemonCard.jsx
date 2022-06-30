@@ -68,13 +68,13 @@ const PokemonCard = ({ url, pokemonByName }) => {
             <section className="card-text row">
               <div className="col-6">
                 <p className="d-flex flex-column">
-                  <span>hp</span>
+                  <span className="color-gray fw-bolder">hp</span>
                   {pokemonByName
                     ? pokemonByName.stats[0].base_stat
                     : pokemon?.stats[0].base_stat}
                 </p>
                 <p className="d-flex flex-column">
-                  <span>Defensa</span>
+                  <span className="color-gray fw-bolder">Defense</span>
                   {pokemonByName
                     ? pokemonByName.stats[2].base_stat
                     : pokemon?.stats[2].base_stat}
@@ -82,13 +82,13 @@ const PokemonCard = ({ url, pokemonByName }) => {
               </div>
               <div className="col-6">
                 <p className="d-flex flex-column">
-                  <span>Ataque</span>
+                  <span className="color-gray fw-bolder">Atack</span>
                   {pokemonByName
                     ? pokemonByName.stats[1].base_stat
                     : pokemon?.stats[1].base_stat}
                 </p>
                 <p className="d-flex flex-column">
-                  <span>Velocidad</span>
+                  <span className="color-gray fw-bolder">Speed</span>
                   {pokemonByName
                     ? pokemonByName.stats[5].base_stat
                     : pokemon?.stats[5].base_stat}
