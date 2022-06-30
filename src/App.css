@@ -155,8 +155,11 @@ body,
 .pokemon-details {
   margin-top: 5rem;
 }
+.main-card_details {
+  max-height: 35rem;
+}
 .pokemon-details .card img {
-  max-height: 20rem;
+  max-height: 25rem;
   max-width: 50%;
   margin: auto;
   position: relative;
@@ -189,7 +192,9 @@ body,
     max-height: 25rem;
   }
 }
-
+.color-gray {
+  color: gray;
+}
 .bg-fire {
   /* fire type */
   background-color: #fe5000;

@@ -24,7 +24,7 @@ const PokemonDetail = () => {
       <div className="col-md-8 my-2 my-md-3">
         <div className="row">
           <div className="col-12">
-            <section className="card p-2 p-md-3">
+            <section className={`card p-2 p-md-3 main-card_details`}>
               <img
                 src={pokemon?.sprites.other['official-artwork'].front_default}
                 alt={`imagen de ${pokemon?.name}`}
@@ -32,13 +32,21 @@ const PokemonDetail = () => {
               />
               <div className="card-body">
                 <div className="d-flex justify-content-around">
-                  <p>hola</p>
-                  <p>hola</p>
+                  <div>
+                    <p className="fw-bold">{pokemon?.weight}</p>
+                    <p className="color-gray">Weight</p>
+                  </div>
+                  <div>
+                    <p className="fw-bold">{pokemon?.height}</p>
+                    <p className="color-gray">Height</p>
+                  </div>
                 </div>
                 <div className="d-flex flex-column">
-                  <p className="card-text m-0">hola</p>
-                  <hr />
-                  <p className="card-text m-0 w-25 mx-auto">hola</p>
+                  <p className="card-text m-0 fw-bold fs-2">{pokemon?.name}</p>
+                  <hr className="m-0" />
+                  <p className="card-text m-0 mx-auto fs-3 border border-1">
+                    #{pokemon?.id}
+                  </p>
                 </div>
               </div>
             </section>
@@ -51,11 +59,11 @@ const PokemonDetail = () => {
                 <section className="card p-2 p-md-3">
                   <div className="card-body">
                     <div className="card-title m-0 fw-bold">Type</div>
-                    <ul className="d-flex justify-content-center align-items-center">
+                    <ul className="d-flex justify-content-center align-items-center flex-wrap">
                       {pokemon?.types.map((type) => (
                         <li className="p-2 p-md-3">
                           <button
-                            className={`btn text-white bg-${type.type.name}`}
+                            className={`btn text-white bg-${type.type.name}  border-1`}
                           >
                             {type.type.name}
                           </button>
@@ -70,10 +78,10 @@ const PokemonDetail = () => {
           <div className="col-md-6 my-2 my-md-3">
             <div className="row">
               <div className="col-12">
-                <section className="card">
+                <section className="card p-2 p-md-3">
                   <div className="card-body">
                     <div className="card-title m-0 fw-bold">Habilities</div>
-                    <ul className="d-flex justify-content-center align-items-center">
+                    <ul className="d-flex justify-content-center align-items-center flex-wrap">
                       {pokemon?.abilities.map((ability) => (
                         <li className="p-2 p-md-3">
                           <button className={`btn border border-secondary`}>
