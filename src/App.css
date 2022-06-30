@@ -159,8 +159,8 @@ body,
   max-height: 35rem;
 }
 .pokemon-details .card img {
-  max-height: 25rem;
-  max-width: 50%;
+  max-height: 40rem;
+  max-width: 40%;
   margin: auto;
   position: relative;
   margin-top: -100px;
@@ -188,7 +188,7 @@ body,
 
 @media screen and (min-width: 992px) {
   .pokemon-details .card img {
-    max-width: 100%;
+    max-width: 85%;
     max-height: 25rem;
   }
 }
