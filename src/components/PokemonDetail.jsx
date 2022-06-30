@@ -30,7 +30,17 @@ const PokemonDetail = () => {
                 alt={`imagen de ${pokemon?.name}`}
                 className="img-fluid"
               />
-              <div className="card-body"></div>
+              <div className="card-body">
+                <div className="d-flex justify-content-around">
+                  <p>hola</p>
+                  <p>hola</p>
+                </div>
+                <div className="d-flex flex-column">
+                  <p className="card-text m-0">hola</p>
+                  <hr />
+                  <p className="card-text m-0 w-25 mx-auto">hola</p>
+                </div>
+              </div>
             </section>
           </div>
         </div>
@@ -44,7 +54,9 @@ const PokemonDetail = () => {
                     <ul className="d-flex justify-content-center align-items-center">
                       {pokemon?.types.map((type) => (
                         <li className="p-2 p-md-3">
-                          <button className={`btn text-white bg-dark`}>
+                          <button
+                            className={`btn text-white bg-${type.type.name}`}
+                          >
                             {type.type.name}
                           </button>
                         </li>
