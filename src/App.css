@@ -218,87 +218,104 @@ body,
   /* water type */
   background-color: #0077c8;
   border: solid 7px #0077c850;
+  color: #0077c8;
 }
 
 .bg-normal {
   /* normal type */
   background-color: #683d5a;
   border: solid 7px #683d5a50;
+  color: #683d5a;
 }
 
 .bg-fighting {
   /* fighting type */
   background-color: #bb1e10;
   border: solid 7px #bb1e1050;
+  color: #bb1e10;
 }
 
 .bg-poison {
   /* poison type */
   background-color: #49176d;
   border: solid 7px #49176d50;
+  color: #49176d;
 }
 
 .bg-ghost {
   /* ghost type */
   background-color: #00205b;
   border: solid 7px #00205b50;
+  color: #00205b;
 }
 
 .bg-rock {
   /* rock type */
   background-color: #caccd1;
   border: solid 7px #caccd150;
+  color: #caccd1;
 }
 .bg-dark {
   /* dark type */
 
   background-color: #050f2c;
   border: solid 7px #050f2c50;
+  color: #050f2c;
 }
 .bg-ice {
   /* ice type */
   background-color: #74d2e7;
   border: solid 7px #74d2e750;
+  color: #74d2e7;
 }
 .bg-steel {
   background-color: #335238;
   border: solid 7px #33523850;
+  color: #335238;
 }
 
 .bg-dragon {
   background-color: #0085ad;
   border: solid 7px #0085ad50;
+  color: #0085ad;
 }
 
 .bg-fairy {
   background-color: #ff4f81;
   border: solid 7px #ff4f8150;
+  color: #ff4f81;
 }
 
 .bg-electric {
   background-color: #3369e7;
   border: solid 7px #3369e750;
+  color: #3369e7;
 }
 .bg-ground {
   background-color: #ffc168;
   border: solid 7px #ffc16850;
+  color: #ffc168;
 }
 
 .bg-flying {
   background-color: #efdf00;
   border: solid 7px #efdf0050;
+  color: #efdf00;
 }
 .bg-psychic {
   background-color: #da1884;
   border: solid 7px #da188450;
+  color: #da1884;
 }
 .bg-unknow {
   background-color: #fefefe;
   border: solid 7px #fefefe50;
+  color: #fefefe;
 }
 .bg-shadow {
   background-color: #caccd1;
   border: solid 7px #caccd150;
+  color: #caccd1;
 }
 
 /*****End***backgrounds**pokemon****/
