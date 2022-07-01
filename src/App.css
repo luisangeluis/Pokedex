@@ -35,7 +35,7 @@ body,
 /***********Login***********/
 /**************************/
 .main-title {
-  font-size: 10rem;
+  font-size: 3rem;
   font-family: 'League Gothic', sans-serif;
   word-spacing: 0.5rem;
   line-height: 0.5em;
@@ -60,6 +60,7 @@ body,
   /* background-color: rgb(237, 27, 36, 0.9); */
   background-color: rgb(89, 179, 136);
 }
+
 .btn-login {
   background-color: rgb(89, 179, 136);
 }
@@ -196,7 +197,7 @@ body,
   justify-content: center;
   align-items: center;
   background-color: black;
-  color: rgb(237, 27, 36, 0.8 );
+  color: rgb(237, 27, 36, 0.8);
   width: 30px;
   height: 30px;
   border-radius: 10%;
@@ -208,6 +209,12 @@ body,
 /**************************/
 
 @media screen and (min-width: 576px) {
+  .login .card img {
+    max-height: 70%;
+  }
+  .main-title {
+    font-size: 7rem;
+  }
   .pokemon-details {
     margin-top: 7rem;
   }
@@ -217,6 +224,12 @@ body,
 }
 
 @media screen and (min-width: 992px) {
+  .login .card img {
+    max-height: 90%;
+  }
+  .main-title {
+    font-size: 10rem;
+  }
   .pokemon-details .card img {
     max-width: 85%;
     max-height: 25rem;

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { setUserName } from '../store/slices/userName.slice';
+import bulbasaur from '../assets/bulbasaur.png';
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
@@ -35,9 +36,9 @@ const Login = () => {
               <div className="row flex-grow-1 ">
                 <div className="col-md-6 d-flex justify-content-center align-items-center ">
                   <img
-                    src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c31a.png"
+                    src={bulbasaur}
                     alt=""
-                    className="img-fluid w-75 p-2 p-md-3"
+                    className="img-fluid p-2 p-md-3"
                   />
                 </div>
                 <div className="col-md-6">
