@@ -179,40 +179,11 @@ body,
 
 /*********PAGINATION**********/
 /******************************/
-.pagination.container {
-  /* display: flex; */
-  margin: 1rem auto;
-  padding: 1rem 2rem;
+.pagination{
   min-height: 3rem;
   background-color: whitesmoke;
-}
-.pagination.container .ul-pagination {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  width: 100%;
-  justify-content: space-around;
-  align-items: center;
-  font-weight: bold;
-}
-.ul-pagination li {
-  padding: 0.5rem;
-}
-.ul-pagination .btn {
-  background-color: rgb(89, 179, 136);
-}
-.pagination-disabled {
-  /* background-color: blue; */
-}
-.pagination-active {
-  background-color: black;
-  color: white;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 1rem auto;
+  font-size: 1.2rem;
 }
 /*********END PAGINATION**********/
 /******************************/
