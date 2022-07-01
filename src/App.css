@@ -179,11 +179,27 @@ body,
 
 /*********PAGINATION**********/
 /******************************/
-.pagination{
+.paginate {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
   min-height: 3rem;
-  background-color: whitesmoke;
+  background-color: rgb(89, 179, 136);
   margin: 1rem auto;
   font-size: 1.2rem;
+  border-radius: 10px;
+}
+.pagination-active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: rgb(237, 27, 36, 0.8 );
+  width: 30px;
+  height: 30px;
+  border-radius: 10%;
 }
 /*********END PAGINATION**********/
 /******************************/
