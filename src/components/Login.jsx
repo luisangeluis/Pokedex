@@ -23,7 +23,7 @@ const Login = () => {
     navigate('/pokedex');
   };
   return (
-    <section className="login h-100 d-flex justify-content-center align-items-center">
+    <section className="login d-flex justify-content-center align-items-center">
       <div className="container login-container text-center d-flex  flex-column justify-content-center align-items-center h-100">
         <div className="row my-2 my-md-3 p-2 p-md-3 w-100 logo">
           <div className="col-12">
@@ -42,7 +42,7 @@ const Login = () => {
                   />
                 </div>
                 <div className="col-md-6">
-                  <div className="card-body border border-2 border-light rounded-2 w-75 h-100 mx-auto d-flex flex-column justify-content-center alig-items-center">
+                  <div className="card-body border border-2 border-light rounded-2 w-75 h-100 mx-auto my-auto d-flex flex-column justify-content-center alig-items-center">
                     <p className="card-title subtitle-1">Pokedex</p>
                     <p className="card-text subtitle-2 ">Hello trainer!</p>
                     <p className="card-text subtitle-2 ">
