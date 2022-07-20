@@ -3,14 +3,28 @@
   padding: 0;
   margin: 0;
 }
+
 button {
   border-style: none;
   list-style-type: none;
 }
 
+button:focus {
+  box-shadow: none !important;
+}
+
+input {
+  box-shadow: none
+}
+
+input:focus {
+  box-shadow: none !important;
+}
+
 ul {
   padding: 0;
 }
+
 ul li {
   list-style: none;
 }
@@ -19,6 +33,7 @@ html {
   min-height: 100%;
   position: relative;
 }
+
 body,
 #root,
 .App {
@@ -36,33 +51,44 @@ body,
 /***********Login***********/
 /**************************/
 
-.login{
+.login {
   min-height: 100%;
+  background-color: #00406f;
 }
-.login .container{
-  /* min-height: 50vh; */
 
+.login >.container {
+  min-height: 100%;
+  box-sizing: border-box;
 }
-.main-title {
+
+.login .main-title {
   font-size: 4rem;
   font-family: 'League Gothic', sans-serif;
   word-spacing: 0.5rem;
   line-height: 0.5em;
   letter-spacing: 10px;
   font-weight: bold;
+  color:black;
+  text-shadow: 7px 3px #00406f;
+
+  background-color:#edff21;
 }
+
 .subtitle-1 {
   font-size: 3rem;
   font-weight: bold;
 }
+
 .subtitle-2 {
   font-size: 1.5rem;
   font-weight: bold;
 }
 
 .login .card {
-  background-color: whitesmoke;
+  background-color: #00406f;
+  border: none;
 }
+
 .login .card .card-body {
   color: black;
   background-color: rgb(237, 27, 36);
@@ -70,16 +96,29 @@ body,
 
 }
 
-.login .card img{
-  max-height: 50%;
+.login .card img {
+  max-height: 75%;
+}
+
+.bg-login{
+  
+  background-image: url('assets/bulbasaur.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position:center center;
+  
+  
 }
 
 .btn-login {
-  background-color: rgb(89, 179, 136);
+  /* background-color: rgb(89, 179, 136); */
+  background-color: rgba(0, 0, 0);
+  color: whitesmoke;
 }
+
 .btn-login:hover {
-  opacity: 0.8;
-  font-weight: bolder;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 /*********End**Login********/
@@ -94,10 +133,11 @@ body,
   align-items: center;
 }
 
-.header > row {
+.header>row {
   flex-grow: 1;
   height: 100%;
 }
+
 .header .main-title {
   font-size: 5rem;
   font-family: 'League Gothic', sans-serif;
@@ -106,6 +146,7 @@ body,
   letter-spacing: 5px;
   font-weight: bolder;
 }
+
 /************End header**********/
 /**************************/
 
@@ -116,6 +157,7 @@ body,
   background-color: whitesmoke;
   border-radius: 2rem;
 }
+
 /*********End filters**********/
 /**************************/
 
@@ -126,6 +168,7 @@ body,
   background-color: rgb(89, 179, 136);
   font-size: 1.5rem;
 }
+
 .saludo span {
   color: rgb(237, 27, 36);
 }
@@ -133,9 +176,11 @@ body,
 .pokemon-list {
   padding: 0 1rem;
 }
+
 .pokemon-list .card {
   max-height: 600px;
 }
+
 .pokemon-list .card button {
   display: flex;
   flex-direction: column;
@@ -164,6 +209,7 @@ body,
 .pokemon-list .card hr {
   margin: 0;
 }
+
 /*********End Home**********/
 /**************************/
 
@@ -172,9 +218,11 @@ body,
 .pokemon-details {
   margin-top: 5rem;
 }
+
 .main-card_details {
   max-height: 35rem;
 }
+
 .pokemon-details .card img {
   max-height: 40rem;
   max-width: 40%;
@@ -182,12 +230,15 @@ body,
   position: relative;
   margin-top: -100px;
 }
+
 .pokemon-details {
   text-align: center;
 }
+
 .movements ul li hr {
   margin: 0.2rem;
 }
+
 /*********End pokemon details**********/
 /******************************/
 
@@ -205,6 +256,7 @@ body,
   font-size: 1.2rem;
   border-radius: 10px;
 }
+
 .pagination-active {
   display: flex;
   justify-content: center;
@@ -215,6 +267,7 @@ body,
   height: 30px;
   border-radius: 10%;
 }
+
 /*********END PAGINATION**********/
 /******************************/
 
@@ -222,10 +275,11 @@ body,
 /**************************/
 
 @media screen and (min-width: 576px) {
-  
+
   .pokemon-details {
     margin-top: 7rem;
   }
+
   .pokemon-details .card img {
     max-width: 70%;
   }
@@ -235,29 +289,35 @@ body,
   .login .card img {
     /* max-height: 90%; */
   }
+
   .main-title {
     /* font-size: 10rem; */
   }
+
   .pokemon-details .card img {
     max-width: 85%;
     max-height: 25rem;
   }
 }
+
 .color-gray {
   color: gray;
 }
+
 .bg-fire {
   /* fire type */
   background-color: #fe5000;
   border: solid 7px #fe500050;
   color: #fe5000;
 }
+
 .bg-grass {
   /* grass type */
   background-color: #84bd00;
   border: solid 7px #84bd0050;
   color: #84bd00;
 }
+
 .bg-bug {
   /* bug type */
   background-color: #009f4d;
@@ -306,6 +366,7 @@ body,
   border: solid 7px #caccd150;
   color: #caccd1;
 }
+
 .bg-dark {
   /* dark type */
 
@@ -313,12 +374,14 @@ body,
   border: solid 7px #050f2c50;
   color: #050f2c;
 }
+
 .bg-ice {
   /* ice type */
   background-color: #74d2e7;
   border: solid 7px #74d2e750;
   color: #74d2e7;
 }
+
 .bg-steel {
   background-color: #335238;
   border: solid 7px #33523850;
@@ -342,6 +405,7 @@ body,
   border: solid 7px #3369e750;
   color: #3369e7;
 }
+
 .bg-ground {
   background-color: #ffc168;
   border: solid 7px #ffc16850;
@@ -353,16 +417,19 @@ body,
   border: solid 7px #efdf0050;
   color: #efdf00;
 }
+
 .bg-psychic {
   background-color: #da1884;
   border: solid 7px #da188450;
   color: #da1884;
 }
+
 .bg-unknow {
   background-color: #fefefe;
   border: solid 7px #fefefe50;
   color: #fefefe;
 }
+
 .bg-shadow {
   background-color: #caccd1;
   border: solid 7px #caccd150;
