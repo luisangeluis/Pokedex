@@ -25,24 +25,20 @@ const Login = () => {
   return (
     <section className="login d-flex justify-content-center align-items-center">
       <div className="container login-container text-center d-flex  flex-column justify-content-center align-items-center h-100">
-        <div className="row my-2 my-md-3 p-2 p-md-3 w-100 logo">
-          <div className="col-12">
-            <h1 className="main-title">Pokemon</h1>
-          </div>
-        </div>
-        <div className="row ">
+        <h1 className="main-title my-2 my-md-3 py-1 py-md-2">Pokemon</h1>
+        <div className="row">
           <div className="col-12">
             <div className="card border border-3 p-2 p-md-3  justify-content-stretch  align-items-center">
-              <div className="row flex-grow-1 ">
-                <div className="col-md-6 d-flex justify-content-center align-items-center ">
+              <div className="row">
+                <div className="col-6 d-flex justify-content-center align-items-center  d-none d-sm-flex">
                   <img
                     src={bulbasaur}
                     alt=""
-                    className="img-fluid p-2 p-md-3"
+                    className="img-fluid p-2 p-md-3 align-self-center"
                   />
                 </div>
-                <div className="col-md-6">
-                  <div className="card-body border border-2 border-light rounded-2 w-75 h-100 mx-auto my-auto d-flex flex-column justify-content-center alig-items-center">
+                <div className="col-12 col-sm-6 d-flex justify-content-center align-items-center">
+                  <div className="card-body border border-2 border-light rounded-2 d-flex flex-column justify-content-center">
                     <p className="card-title subtitle-1">Pokedex</p>
                     <p className="card-text subtitle-2 ">Hello trainer!</p>
                     <p className="card-text subtitle-2 ">

@@ -22,7 +22,8 @@ html {
 body,
 #root,
 .App {
-  background-color: rgb(237, 27, 36);
+  /* background-color: rgb(237, 27, 36); */
+  background-color: whitesmoke;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -35,8 +36,11 @@ body,
 /***********Login***********/
 /**************************/
 
+.login{
+  min-height: 100%;
+}
 .login .container{
-  min-height: 50vh;
+  /* min-height: 50vh; */
 
 }
 .main-title {
@@ -57,12 +61,13 @@ body,
 }
 
 .login .card {
-  background-color: rgb(237, 27, 36);
-  
+  background-color: whitesmoke;
 }
 .login .card .card-body {
   color: black;
-  background-color: rgb(89, 179, 136);
+  background-color: rgb(237, 27, 36);
+  height: 100%;
+
 }
 
 .login .card img{
