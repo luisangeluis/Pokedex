@@ -56,7 +56,7 @@ body,
   background-color: #00406f;
 }
 
-.login >.container {
+.login>.container {
   min-height: 100%;
   box-sizing: border-box;
 }
@@ -68,10 +68,10 @@ body,
   line-height: 0.5em;
   letter-spacing: 10px;
   font-weight: bold;
-  color:black;
+  color: black;
   text-shadow: 7px 3px #00406f;
 
-  background-color:#edff21;
+  background-color: #edff21;
 }
 
 .subtitle-1 {
@@ -100,14 +100,14 @@ body,
   max-height: 75%;
 }
 
-.bg-login{
-  
+.bg-login {
+
   background-image: url('assets/bulbasaur.png');
   background-size: contain;
   background-repeat: no-repeat;
-  background-position:center center;
-  
-  
+  background-position: center center;
+
+
 }
 
 .btn-login {
@@ -271,35 +271,32 @@ body,
 /*********END PAGINATION**********/
 /******************************/
 
+/*********LOADER**********/
+/******************************/
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color:#00406f90;
+  width: 100%;
+  min-height: 100%;
+  font-size: 5rem;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+
+}
+
+/*********END LOADER**********/
+/******************************/
+
 /*****backgrounds pokemon****/
 /**************************/
-
-@media screen and (min-width: 576px) {
-
-  .pokemon-details {
-    margin-top: 7rem;
-  }
-
-  .pokemon-details .card img {
-    max-width: 70%;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .login .card img {
-    /* max-height: 90%; */
-  }
-
-  .main-title {
-    /* font-size: 10rem; */
-  }
-
-  .pokemon-details .card img {
-    max-width: 85%;
-    max-height: 25rem;
-  }
-}
-
 .color-gray {
   color: gray;
 }
@@ -438,3 +435,29 @@ body,
 
 /*****End***backgrounds**pokemon****/
 /**************************/
+
+@media screen and (min-width: 576px) {
+
+  .pokemon-details {
+    margin-top: 7rem;
+  }
+
+  .pokemon-details .card img {
+    max-width: 70%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .login .card img {
+    /* max-height: 90%; */
+  }
+
+  .main-title {
+    /* font-size: 10rem; */
+  }
+
+  .pokemon-details .card img {
+    max-width: 85%;
+    max-height: 25rem;
+  }
+}

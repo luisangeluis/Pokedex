@@ -15,7 +15,7 @@ const Login = () => {
 
   useEffect(() => {
     console.log('Naciendo');
-    dispatch(setUserName(null));
+    // dispatch(setUserName(null));
   }, []);
 
   const makeUserName = (data) => {
