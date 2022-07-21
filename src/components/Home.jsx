@@ -1,59 +1,43 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import useGetAllUrls from '../hooks/useGetAllUrls';
 import Loader from './Loader';
 import PokemonsList from './PokemonsList';
 import SearchPokemon from './SearchPokemon';
 import SelectPokemonTypes from './SelectPokemonTypes';
 
 const Home = () => {
+  //Loader
   const [isLoading, setIsLoading] = useState(true);
-
   //Redux
   const userName = useSelector((state) => state.userName);
-  const [urlsPokemons, setUrlsPokemons] = useState();
-  const [pokemonByName, setPokemonByName] = useState();
-  const [resetSelect, setResetSelect] = useState(false);
+  //Custom Hook
+  const[allUrls] =useGetAllUrls();
+  //useState
+  const[urlByName,setUrlByName] = useState();
+  const[urlsByType,setUrlsByType] =useState();
+  const[urlsToCall,setUrlsToCall] =useState();
+
+  console.log(allUrls);
 
   useEffect(() => {
-    if (!pokemonByName && !urlsPokemons) {
-      getPokemons();
+    if(allUrls){
+      setUrlsToCall(allUrls)
     }
-
-
-  }, []);
+  },[allUrls])
 
   useEffect(() => {
-    if (urlsPokemons) {
-      setPokemonByName();
+    if(urlByName){
+      setUrlsToCall([urlByName]);
     }
-  }, [urlsPokemons]);
+  }, [urlByName])
+  
+  
 
-  useEffect(() => {
-    if (pokemonByName) {
-      setIsLoading(false)
-    }else{
-      setIsLoading(true)
 
-    }
-  }, [pokemonByName])
-
-  const getPokemons = () => {
-    console.log('obteniendo todos los pokemon');
-    axios
-      .get('https://pokeapi.co/api/v2/pokemon/?limit=3000&offset=0')
-      .then((res) => {
-
-        let urls = [];
-        res.data.results.forEach((url) => {
-          urls.push(url.url);
-        });
-        setUrlsPokemons(urls);
-
-      })
-      .catch((error) => console.log(error))
-      .finally(() => setIsLoading(false));
-  };
+  // console.log(allUrls);
+  
   return (
     <section className="row">
       <div className="col-12">
@@ -64,27 +48,15 @@ const Home = () => {
           </div>
         </section>
         <section className="row filters p-2 p-md-3">
-          <SearchPokemon
-            setPokemonByName={setPokemonByName}
-            resetSelect={resetSelect}
-            setResetSelect={setResetSelect}
-            setIsLoading={setIsLoading}
-          />
-          <SelectPokemonTypes
+          <SearchPokemon setUrlByName={setUrlByName}/>
+          {/* <SelectPokemonTypes
             setUrlsPokemons={setUrlsPokemons}
             getPokemons={getPokemons}
             resetSelect={resetSelect}
-          />
+          /> */}
         </section>
         {
-          isLoading
-            ? <Loader />
-            :
-            pokemonByName ? (
-              <PokemonsList pokemonByName={pokemonByName} />
-            ) : (
-              urlsPokemons && <PokemonsList urlsPokemons={urlsPokemons} />
-            )
+          <PokemonsList urlsToCall={urlsToCall}/> 
         }
       </div>
     </section>
