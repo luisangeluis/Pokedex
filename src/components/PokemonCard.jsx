@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useGetPokemon from '../hooks/useGetPokemon';
 
-const PokemonCard = ({ url, pokemonByName }) => {
+const PokemonCard = ({ url, pokemonByName,setErrorExist }) => {
   const navigate = useNavigate();
-  const [pokemon] = useGetPokemon(url);
+  const [pokemon] = useGetPokemon(url,setErrorExist);
 
   const goToDetail = (e) => {
     // console.log(e);

@@ -9,12 +9,15 @@ import SelectPokemonTypes from './SelectPokemonTypes';
 const Home = () => {
   //Loader
   const [isLoading, setIsLoading] = useState(true);
+  const [errorExist,setErrorExist] =useState(false);
   //Redux
   const userName = useSelector((state) => state.userName);
   //Custom Hook
   const[allUrls] =useGetAllUrls();
   //useState
+  const [urlsByType,setUrlsByType] =useState();
   const[urlsToCall,setUrlsToCall] =useState();
+  const [resetSelect,setResetSelect] =useState(false);
 
   useEffect(() => {
     if(allUrls){
@@ -22,6 +25,18 @@ const Home = () => {
     }
   },[allUrls])
 
+  useEffect(() => {
+    setErrorExist(false)
+  }, [urlsToCall])
+  
+  useEffect(() => {
+    
+    if(urlsByType){
+      setUrlsToCall(urlsByType)
+    }
+    
+  }, [urlsByType])
+  
   console.log(urlsToCall);
   
   return (
@@ -34,11 +49,11 @@ const Home = () => {
           </div>
         </section>
         <section className="row filters p-2 p-md-3">
-          <SearchPokemon setUrlsToCall={setUrlsToCall}/>
-          <SelectPokemonTypes setUrlsToCall={setUrlsToCall}/>
+          <SearchPokemon setUrlsToCall={setUrlsToCall} setResetSelect={setResetSelect} resetSelect={resetSelect}/>
+          <SelectPokemonTypes setUrlsByType={setUrlsByType} resetSelect={resetSelect}/>
         </section>
         {
-          <PokemonsList urlsToCall={urlsToCall}/> 
+          <PokemonsList urlsToCall={urlsToCall} setErrorExist={setErrorExist} errorExist={errorExist}/> 
         }
       </div>
     </section>

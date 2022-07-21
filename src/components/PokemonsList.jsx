@@ -4,19 +4,16 @@ import PokemonCard from './PokemonCard';
 import ReactPaginate from 'react-paginate';
 import Loader from './Loader';
 
-const PokemonsList = ({ urlsToCall, pokemonByName }) => {
-
-  useEffect(() => {
-   
-  }, [urlsToCall])
-  
+const PokemonsList = ({ urlsToCall, setErrorExist, errorExist }) => {
 
   return (
     <section className='pokemon-list'>
       <div className="container">
         <div className="row">
           {
-            urlsToCall?.map(url => <PokemonCard url={url} key={url}/>)
+            urlsToCall?.length <= 1 && errorExist==true
+              ? <h2 className="text-danger">Sin resultados</h2>
+              : urlsToCall?.map(url => <PokemonCard url={url} key={url} setErrorExist={setErrorExist}/>)
           }
         </div>
       </div>

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
 
-const SelectPokemonTypes = ({setUrlsToCall}) => {
+const SelectPokemonTypes = ({setUrlsByType,resetSelect}) => {
   const select = useRef(null);
   const [pokemonTypesOptions, setPokemonTypesOptions] = useState();
 
@@ -9,12 +9,12 @@ const SelectPokemonTypes = ({setUrlsToCall}) => {
     getPokemonTypes();
   }, []);
 
-  // useEffect(() => {
-  //   // if (resetSelect) {
-  //   //   console.log('RESETEANDO');
-  //   getResetSelect();
-  //   // }
-  // }, [resetSelect]);
+  useEffect(() => {
+    // if (resetSelect) {
+    //   console.log('RESETEANDO');
+    getResetSelect();
+    // }
+  }, [resetSelect]);
 
   const getPokemonTypes = () => {
     const url = 'https://pokeapi.co/api/v2/type';
@@ -40,7 +40,7 @@ const SelectPokemonTypes = ({setUrlsToCall}) => {
             console.log(url.pokemon.url);
             urls.push(url.pokemon.url);
           })
-          setUrlsToCall(urls);
+          setUrlsByType(urls);
         })
         .catch(error=>{console.log(error);})
     }
@@ -54,7 +54,7 @@ const SelectPokemonTypes = ({setUrlsToCall}) => {
           urls.push(url.url);
         })
 
-        setUrlsToCall(urls)
+        setUrlsByType(urls)
       })
       .catch((error) => console.log(error))
     }
@@ -89,10 +89,10 @@ const SelectPokemonTypes = ({setUrlsToCall}) => {
   //   }
   // };
 
-  // const getResetSelect = () => {
-  //   console.log(select.current);
-  //   select.current.value = '';
-  // };
+  const getResetSelect = () => {
+    console.log(select.current);
+    select.current.value = '';
+  };
 
   return (
     <div className="col-md-6 d-flex justify-content-center align-items-center p-2 p-md-3">
