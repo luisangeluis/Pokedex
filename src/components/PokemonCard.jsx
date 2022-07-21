@@ -21,7 +21,7 @@ const PokemonCard = ({ url, pokemonByName }) => {
     return stringInfo;
   };
   // console.log(pokemonByName);
-  // console.log(pokemon);
+  console.log(pokemon);
 
   return (
     <div className="col-md-6 col-lg-3">

@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import useGetAllUrls from '../hooks/useGetAllUrls';
@@ -15,11 +14,7 @@ const Home = () => {
   //Custom Hook
   const[allUrls] =useGetAllUrls();
   //useState
-  const[urlByName,setUrlByName] = useState();
-  const[urlsByType,setUrlsByType] =useState();
   const[urlsToCall,setUrlsToCall] =useState();
-
-  console.log(allUrls);
 
   useEffect(() => {
     if(allUrls){
@@ -27,16 +22,7 @@ const Home = () => {
     }
   },[allUrls])
 
-  useEffect(() => {
-    if(urlByName){
-      setUrlsToCall([urlByName]);
-    }
-  }, [urlByName])
-  
-  
-
-
-  // console.log(allUrls);
+  console.log(urlsToCall);
   
   return (
     <section className="row">
@@ -48,12 +34,8 @@ const Home = () => {
           </div>
         </section>
         <section className="row filters p-2 p-md-3">
-          <SearchPokemon setUrlByName={setUrlByName}/>
-          {/* <SelectPokemonTypes
-            setUrlsPokemons={setUrlsPokemons}
-            getPokemons={getPokemons}
-            resetSelect={resetSelect}
-          /> */}
+          <SearchPokemon setUrlsToCall={setUrlsToCall}/>
+          <SelectPokemonTypes setUrlsToCall={setUrlsToCall}/>
         </section>
         {
           <PokemonsList urlsToCall={urlsToCall}/> 
