@@ -25,20 +25,20 @@ const Login = () => {
   };
   return (
     <section className="login d-flex justify-content-center align-items-center">
-      <div className="container login-container d-flex flex-column text-center border border-dark border-2 ">
+      <div className="container login-container d-flex flex-column text-center ">
         <h1 className="main-title my-2 my-md-3 p-2 p-md-3 mx-auto rounded-pill border border-2 border-dark">Pokemon</h1>
         <div className="row">
           <div className="col-12">
             <div className="card p-2 p-md-3 justify-content-center  align-items-center">
               <div className="row ">
-                <div className="col-6 d-flex justify-content-center align-items-center d-none d-sm-flex">
+                <div className="col-6 d-flex justify-content-center align-items-center">
                   <img
                     src={bulbasaur}
                     alt=""
-                    className="img-fluid p-2 p-md-3 align-self-center"
+                    className="img-fluid p-2 p-md-3 align-self-center d-none d-sm-flex"
                   />
                 </div>
-                <div className="col-6 d-flex justify-content-center align-items-center mx-auto">
+                <div className="col-12 col-sm-6 d-flex justify-content-center align-items-center mx-auto">
                   <div className="card-body border border-2 border-light rounded-2 d-flex flex-column justify-content-center">
                     <p className="card-title subtitle-1">Pokedex</p>
                     <p className="card-text subtitle-2 ">Hello trainer!</p>

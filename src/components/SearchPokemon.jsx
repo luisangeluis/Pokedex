@@ -15,7 +15,7 @@ const SearchPokemon = ({setUrlsToCall,setResetSelect,resetSelect}) => {
   };
 
   return (
-    <div className="col-md-6 d-flex justify-content-center align-items-center p-2 p-md-3 rounded-2 w-50  w-md-75 mx-auto">
+    <div className="col-md-6 d-flex justify-content-center align-items-center p-2 p-md-3 rounded-2 w-md-75 mx-auto">
       <form onSubmit={handleSubmit(searchPokemon)}>
         <div className="input-group">
           <input

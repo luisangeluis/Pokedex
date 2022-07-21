@@ -99,7 +99,7 @@ const SelectPokemonTypes = ({setUrlsByType,resetSelect}) => {
       <select
         onChange={getUrlsByType}
         ref={select}
-        className="form-select w-50"
+        className="form-select w-md-50"
       >
         <option value="">Select a type</option>
         <option value="todos">All pokemons</option>

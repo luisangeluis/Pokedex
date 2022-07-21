@@ -38,7 +38,7 @@ body,
 #root,
 .App {
   /* background-color: rgb(237, 27, 36); */
-  background-color: whitesmoke;
+  background-color: #00406f;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -48,32 +48,36 @@ body,
   bottom: 0;
 }
 
-/***********Login***********/
-/**************************/
 
-.login {
-  min-height: 100%;
-  background-color: #00406f;
-}
-
-.login>.container {
-  min-height: 100%;
-  box-sizing: border-box;
-}
-
-.login .main-title {
-  font-size: 4rem;
+.main-title {
+  font-size: 2rem;
   font-family: 'League Gothic', sans-serif;
   word-spacing: 0.5rem;
   line-height: 0.5em;
   letter-spacing: 10px;
   font-weight: bold;
   color: black;
-  text-shadow: 7px 3px #00406f;
+  text-shadow: 3px 3px #00406f;
 
   background-color: #edff21;
 }
+/***********Login***********/
+/**************************/
 
+.login {
+  min-height: 100%;
+  background-color: #00406f;
+  /* background-color: whitesmoke; */
+}
+
+.login>.container {
+  min-height: 100%;
+  box-sizing: border-box;
+  max-width: 80%;
+}
+.login .main-title{
+
+}
 .subtitle-1 {
   font-size: 3rem;
   font-weight: bold;
@@ -86,6 +90,7 @@ body,
 
 .login .card {
   background-color: #00406f;
+  /* background-color: whitesmoke; */
   border: none;
 }
 
@@ -98,16 +103,14 @@ body,
 
 .login .card img {
   max-height: 75%;
+  filter: drop-shadow(25px -10px 15px rgba(0,0,0,0.9));
 }
 
-.bg-login {
+.login .card img:hover{
+  filter: drop-shadow(15px -5px 10px rgba(0,0,0,0.7));
 
-  background-image: url('assets/bulbasaur.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-
-
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .btn-login {
@@ -127,10 +130,12 @@ body,
 /*************Header**********/
 /**************************/
 .header .container {
-  min-height: 3.5rem;
+  min-height: 5.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgb(237, 27, 36);
+  border-radius: 7px;
 }
 
 .header>row {
@@ -145,6 +150,16 @@ body,
   line-height: 0;
   letter-spacing: 5px;
   font-weight: bolder;
+  color: #edff21;
+  color:#212529;
+  color: rgb(237, 27, 36);
+  color: #ed1b24;
+  color: #00406f;
+
+  text-shadow: 3px 3px #00406f;
+  text-shadow: 1px 1px 3px #edff21;
+  /* background-color: #00406f; */
+
 }
 
 /************End header**********/
@@ -164,8 +179,8 @@ body,
 /*************Home**********/
 /**************************/
 .saludo {
-  font-weight: bolder;
-  background-color: rgb(89, 179, 136);
+  /* font-weight: bolder; */
+  /* background-color: rgb(237, 27, 36); */
   font-size: 1.5rem;
 }
 
@@ -437,7 +452,9 @@ body,
 /**************************/
 
 @media screen and (min-width: 576px) {
-
+  .login .main-title{
+    font-size: 4rem;
+  }
   .pokemon-details {
     margin-top: 7rem;
   }
