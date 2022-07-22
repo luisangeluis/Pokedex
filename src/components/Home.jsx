@@ -58,13 +58,13 @@ const Home = () => {
             resetSelect={resetSelect}
           />
         </section>
-        {
+        {urlsToCall && (
           <PokemonsList
             urlsToCall={urlsToCall}
             setErrorExist={setErrorExist}
             errorExist={errorExist}
           />
-        }
+        )}
       </div>
     </section>
   );
