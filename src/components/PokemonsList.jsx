@@ -12,12 +12,12 @@ const PokemonsList = ({ urlsToCall, setErrorExist, errorExist }) => {
   const lastPokemon = currentPage * pokemonsPerPage;
   let pageCount = Math.ceil(urlsToCall?.length / pokemonsPerPage);
 
-  arrayPokemons = urlsToCall?.slice(lastPokemon - pokemonsPerPage, lastPokemon);
+  arrayPokemons = urlsToCall.slice(lastPokemon - pokemonsPerPage, lastPokemon);
 
   const displayUsers = urlsToCall
-    ?.slice(lastPokemon, lastPokemon + pokemonsPerPage)
+    .slice(lastPokemon, lastPokemon + pokemonsPerPage)
     .map((url) => {
-      return <PokemonCard url={url} key={url} />;
+      return <PokemonCard url={url} key={url} setErrorExist={setErrorExist} />;
     });
 
   const changePage = ({ selected }) => {
@@ -25,7 +25,7 @@ const PokemonsList = ({ urlsToCall, setErrorExist, errorExist }) => {
   };
 
   useEffect(() => {
-    pageCount = Math.ceil(urlsToCall?.length / pokemonsPerPage);
+    pageCount = Math.ceil(urlsToCall.length / pokemonsPerPage);
   }, [urlsToCall]);
 
   return (
@@ -34,26 +34,26 @@ const PokemonsList = ({ urlsToCall, setErrorExist, errorExist }) => {
         <div className="row">
           {urlsToCall?.length <= 1 && errorExist == true ? (
             <h2 className="text-danger">Sin resultados</h2>
-          ) : 
-          // (
-          //   urlsToCall?.map((url) => (
-          //     <PokemonCard url={url} key={url} setErrorExist={setErrorExist} />
-          //   ))
-          // )
-          
+          ) : (
+            // (
+            //   urlsToCall?.map((url) => (
+            //     <PokemonCard url={url} key={url} setErrorExist={setErrorExist} />
+            //   ))
+            // )
 
-          <>
-            <ReactPaginate
-              pageCount={pageCount}
-              onPageChange={changePage}
-              containerClassName={'paginate'}
-              previousLinkClassName={'previous-btn'}
-              nextLinkClassName={'next-btn'}
-              disabledClassName={'pagination-disabled'}
-              activeClassName={'pagination-active'}
-            />
-            {displayUsers}
-          }
+            <>
+              <ReactPaginate
+                pageCount={pageCount}
+                onPageChange={changePage}
+                containerClassName={'paginate'}
+                previousLinkClassName={'previous-btn'}
+                nextLinkClassName={'next-btn'}
+                disabledClassName={'pagination-disabled'}
+                activeClassName={'pagination-active'}
+              />
+              {displayUsers}
+            </>
+          )}
         </div>
       </div>
     </section>
