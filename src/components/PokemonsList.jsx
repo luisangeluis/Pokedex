@@ -20,17 +20,40 @@ const PokemonsList = ({ urlsToCall, setErrorExist, errorExist }) => {
       return <PokemonCard url={url} key={url} />;
     });
 
+  const changePage = ({ selected }) => {
+    setCurrentPage(selected);
+  };
+
+  useEffect(() => {
+    pageCount = Math.ceil(urlsToCall?.length / pokemonsPerPage);
+  }, [urlsToCall]);
+
   return (
     <section className="pokemon-list">
       <div className="container">
         <div className="row">
           {urlsToCall?.length <= 1 && errorExist == true ? (
             <h2 className="text-danger">Sin resultados</h2>
-          ) : (
-            urlsToCall?.map((url) => (
-              <PokemonCard url={url} key={url} setErrorExist={setErrorExist} />
-            ))
-          )}
+          ) : 
+          // (
+          //   urlsToCall?.map((url) => (
+          //     <PokemonCard url={url} key={url} setErrorExist={setErrorExist} />
+          //   ))
+          // )
+          
+
+          <>
+            <ReactPaginate
+              pageCount={pageCount}
+              onPageChange={changePage}
+              containerClassName={'paginate'}
+              previousLinkClassName={'previous-btn'}
+              nextLinkClassName={'next-btn'}
+              disabledClassName={'pagination-disabled'}
+              activeClassName={'pagination-active'}
+            />
+            {displayUsers}
+          }
         </div>
       </div>
     </section>
