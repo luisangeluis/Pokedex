@@ -7,26 +7,32 @@ import bulbasaur from '../assets/bulbasaur.png';
 
 const Login = () => {
   //React FORM
-  const { register, handleSubmit,formState:{errors} } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   //REACT ROUTER
   const navigate = useNavigate();
   //REDUX
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log('Naciendo');
+    // console.log('Naciendo');
     // dispatch(setUserName(null));
   }, []);
 
   const makeUserName = (data) => {
-    console.log(data.userName);
+    // console.log(data.userName);
     dispatch(setUserName(data.userName));
     navigate('/pokedex');
   };
   return (
     <section className="login d-flex justify-content-center align-items-center">
       <div className="container login-container d-flex flex-column text-center ">
-        <h1 className="main-title my-2 my-md-3 p-2 p-md-3 mx-auto rounded-pill border border-2 border-dark">Pokemon</h1>
+        <h1 className="main-title my-2 my-md-3 p-2 p-md-3 mx-auto rounded-pill border border-2 border-dark">
+          Pokemon
+        </h1>
         <div className="row">
           <div className="col-12">
             <div className="card p-2 p-md-3 justify-content-center  align-items-center">
@@ -53,7 +59,9 @@ const Login = () => {
                           {...register('userName', { required: true })}
                           className="form-control"
                         />
-                        {errors.userName?.type === 'required' && <p className='fw-bold'>First name is required</p>}
+                        {errors.userName?.type === 'required' && (
+                          <p className="fw-bold">First name is required</p>
+                        )}
                       </div>
                       <button
                         type="submit"

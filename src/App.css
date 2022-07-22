@@ -14,7 +14,7 @@ button:focus {
 }
 
 input {
-  box-shadow: none
+  box-shadow: none;
 }
 
 input:focus {
@@ -48,7 +48,6 @@ body,
   bottom: 0;
 }
 
-
 .main-title {
   font-size: 2rem;
   font-family: 'League Gothic', sans-serif;
@@ -70,13 +69,12 @@ body,
   /* background-color: whitesmoke; */
 }
 
-.login>.container {
+.login > .container {
   min-height: 100%;
   box-sizing: border-box;
   max-width: 80%;
 }
-.login .main-title{
-
+.login .main-title {
 }
 .subtitle-1 {
   font-size: 3rem;
@@ -98,16 +96,15 @@ body,
   color: black;
   background-color: rgb(237, 27, 36);
   height: 100%;
-
 }
 
 .login .card img {
   max-height: 75%;
-  filter: drop-shadow(25px -10px 15px rgba(0,0,0,0.9));
+  filter: drop-shadow(25px -10px 15px rgba(0, 0, 0, 0.9));
 }
 
-.login .card img:hover{
-  filter: drop-shadow(15px -5px 10px rgba(0,0,0,0.7));
+.login .card img:hover {
+  filter: drop-shadow(15px -5px 10px rgba(0, 0, 0, 0.7));
 
   -webkit-transform: scale(1.05);
   transform: scale(1.05);
@@ -138,7 +135,7 @@ body,
   border-radius: 7px;
 }
 
-.header>row {
+.header > row {
   flex-grow: 1;
   height: 100%;
 }
@@ -151,7 +148,7 @@ body,
   letter-spacing: 5px;
   font-weight: bolder;
   color: #edff21;
-  color:#212529;
+  color: #212529;
   color: rgb(237, 27, 36);
   color: #ed1b24;
   color: #00406f;
@@ -159,7 +156,6 @@ body,
   text-shadow: 3px 3px #00406f;
   text-shadow: 1px 1px 3px #edff21;
   /* background-color: #00406f; */
-
 }
 
 /************End header**********/
@@ -193,6 +189,7 @@ body,
 }
 
 .pokemon-list .card {
+  min-height: 300px;
   max-height: 600px;
 }
 
@@ -293,7 +290,7 @@ body,
   justify-content: center;
   align-items: center;
   margin: 0;
-  background-color:#00406f90;
+  background-color: #00406f90;
   width: 100%;
   min-height: 100%;
   font-size: 5rem;
@@ -304,7 +301,6 @@ body,
   right: 0;
   bottom: 0;
   z-index: 3;
-
 }
 
 /*********END LOADER**********/
@@ -452,7 +448,7 @@ body,
 /**************************/
 
 @media screen and (min-width: 576px) {
-  .login .main-title{
+  .login .main-title {
     font-size: 4rem;
   }
   .pokemon-details {

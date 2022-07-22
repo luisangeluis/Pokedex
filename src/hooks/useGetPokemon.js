@@ -1,10 +1,16 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
-const useGetPokemon = (url,setErrorExist) => {
+const useGetPokemon = (url, setErrorExist, setIsLoading) => {
   const [pokemon, setPokemon] = useState();
 
+  // useEffect(() => {
+  //   setIsLoading(true);
+  // }, []);
+
   useEffect(() => {
+    setIsLoading(true);
+
     if (url) {
       getPokemon(url);
     }
@@ -16,13 +22,15 @@ const useGetPokemon = (url,setErrorExist) => {
       .get(url)
       .then((res) => {
         // console.log(res.data);
-        setErrorExist(false)
+        setErrorExist(false);
         setPokemon(res.data);
       })
       .catch((error) => {
         console.log(error);
-        setErrorExist(true)
-
+        setErrorExist(true);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
 

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
 
-const SelectPokemonTypes = ({setUrlsByType,resetSelect}) => {
+const SelectPokemonTypes = ({ setUrlsByType, resetSelect }) => {
   const select = useRef(null);
   const [pokemonTypesOptions, setPokemonTypesOptions] = useState();
 
@@ -27,41 +27,42 @@ const SelectPokemonTypes = ({setUrlsByType,resetSelect}) => {
       .catch((error) => console.log(error));
   };
 
-  const getUrlsByType=(e)=>{
+  const getUrlsByType = (e) => {
     console.log(e.target.value);
     let urlType = e.target.value;
 
-    if(urlType!=='' && urlType!='todos'){
-      axios.get(urlType)
-        .then(res=>{
+    if (urlType !== '' && urlType != 'todos') {
+      axios
+        .get(urlType)
+        .then((res) => {
           console.log(res.data.pokemon);
           let urls = [];
-          res.data.pokemon.forEach(url=>{
+          res.data.pokemon.forEach((url) => {
             console.log(url.pokemon.url);
             urls.push(url.pokemon.url);
-          })
+          });
           setUrlsByType(urls);
         })
-        .catch(error=>{console.log(error);})
+        .catch((error) => {
+          console.log(error);
+        });
     }
 
-    if(urlType=='todos'){
-      axios.get('https://pokeapi.co/api/v2/pokemon/?limit=10&offset=0')
-      .then((res) => {
-        let urls = [];
+    if (urlType == 'todos') {
+      axios
+        .get('https://pokeapi.co/api/v2/pokemon/?limit=10&offset=0')
+        .then((res) => {
+          let urls = [];
 
-        res.data.results.forEach(url => {
-          urls.push(url.url);
+          res.data.results.forEach((url) => {
+            urls.push(url.url);
+          });
+
+          setUrlsByType(urls);
         })
-
-        setUrlsByType(urls)
-      })
-      .catch((error) => console.log(error))
+        .catch((error) => console.log(error));
     }
-
-  }
-
-  
+  };
 
   // const getPokemonsByType = (e) => {
   //   // console.log(e.target.value);
@@ -90,7 +91,7 @@ const SelectPokemonTypes = ({setUrlsByType,resetSelect}) => {
   // };
 
   const getResetSelect = () => {
-    console.log(select.current);
+    // console.log(select.current);
     select.current.value = '';
   };
 

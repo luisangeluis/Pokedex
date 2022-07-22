@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-const SearchPokemon = ({setUrlsToCall,setResetSelect,resetSelect}) => {
+const SearchPokemon = ({ setUrlsToCall, setResetSelect, resetSelect }) => {
   const { register, handleSubmit } = useForm();
 
   const searchPokemon = (data) => {
@@ -10,8 +10,8 @@ const SearchPokemon = ({setUrlsToCall,setResetSelect,resetSelect}) => {
     let pokemonName = data.pokemonName.toLowerCase();
     const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
     // setUrlByName(url);
-    setUrlsToCall([url])
-    setResetSelect(!resetSelect)
+    setUrlsToCall([url]);
+    setResetSelect(!resetSelect);
   };
 
   return (

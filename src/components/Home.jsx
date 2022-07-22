@@ -8,37 +8,36 @@ import SelectPokemonTypes from './SelectPokemonTypes';
 
 const Home = () => {
   //Loader
-  const [isLoading, setIsLoading] = useState(true);
-  const [errorExist,setErrorExist] =useState(false);
+  const [errorExist, setErrorExist] = useState(false);
   //Redux
   const userName = useSelector((state) => state.userName);
   //Custom Hook
-  const[allUrls] =useGetAllUrls();
+  const [allUrls] = useGetAllUrls();
   //useState
-  const [urlsByType,setUrlsByType] =useState();
-  const[urlsToCall,setUrlsToCall] =useState();
-  const [resetSelect,setResetSelect] =useState(false);
+  const [urlsByType, setUrlsByType] = useState();
+  const [urlsToCall, setUrlsToCall] = useState();
+  const [resetSelect, setResetSelect] = useState(false);
 
   useEffect(() => {
-    if(allUrls){
-      setUrlsToCall(allUrls)
+    if (allUrls) {
+      setUrlsToCall(allUrls);
     }
-  },[allUrls])
+  }, [allUrls]);
 
   useEffect(() => {
-    setErrorExist(false)
-  }, [urlsToCall])
-  
-  useEffect(() => {
-    
-    if(urlsByType){
-      setUrlsToCall(urlsByType)
+    if (urlsByType) {
+      setUrlsToCall(urlsByType);
     }
-    
-  }, [urlsByType])
-  
-  console.log(urlsToCall);
-  
+  }, [urlsByType]);
+
+  useEffect(()=>{
+    if(urlsToCall){
+      setErrorExist(false);
+    }
+  },[urlsToCall])
+
+  // console.log(urlsToCall);
+
   return (
     <section className="row">
       <div className="col-12">
@@ -49,11 +48,22 @@ const Home = () => {
           </div>
         </section>
         <section className="row filters p-2 p-md-3">
-          <SearchPokemon setUrlsToCall={setUrlsToCall} setResetSelect={setResetSelect} resetSelect={resetSelect}/>
-          <SelectPokemonTypes setUrlsByType={setUrlsByType} resetSelect={resetSelect}/>
+          <SearchPokemon
+            setUrlsToCall={setUrlsToCall}
+            setResetSelect={setResetSelect}
+            resetSelect={resetSelect}
+          />
+          <SelectPokemonTypes
+            setUrlsByType={setUrlsByType}
+            resetSelect={resetSelect}
+          />
         </section>
         {
-          <PokemonsList urlsToCall={urlsToCall} setErrorExist={setErrorExist} errorExist={errorExist}/> 
+          <PokemonsList
+            urlsToCall={urlsToCall}
+            setErrorExist={setErrorExist}
+            errorExist={errorExist}
+          />
         }
       </div>
     </section>
