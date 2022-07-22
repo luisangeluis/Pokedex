@@ -1,30 +1,30 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 const useGetAllUrls = () => {
   const [allUrls, setAllUrls] = useState();
-  const [allPokemons,setAllPokemons] =useState();
-  
+  const [allPokemons, setAllPokemons] = useState();
+
   useEffect(() => {
     getAllUrls();
-  }, [])
+  }, []);
 
   const getAllUrls = () => {
-    axios.get('https://pokeapi.co/api/v2/pokemon/?limit=10&offset=0')
+    axios
+      .get('https://pokeapi.co/api/v2/pokemon/?limit=10000&offset=0')
       .then((res) => {
         let urls = [];
 
-        res.data.results.forEach(url => {
+        res.data.results.forEach((url) => {
           urls.push(url.url);
-        })
+        });
 
-        setAllUrls(urls)
+        setAllUrls(urls);
       })
-      .catch((error) => console.log(error))
-  }
-
+      .catch((error) => console.log(error));
+  };
 
   return [allUrls];
-}
+};
 
-export default useGetAllUrls
+export default useGetAllUrls;
