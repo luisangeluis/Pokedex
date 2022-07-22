@@ -202,12 +202,12 @@ body,
 }
 
 .pokemon-list .card .card-body {
-  max-height: 350px;
+  height: 300px;
   width: 100%;
 }
 
 .pokemon-list .card img {
-  max-height: 150px;
+  max-height: 130px;
   margin-bottom: -3vh;
   position: relative;
 }
