@@ -30,11 +30,11 @@ const Home = () => {
     }
   }, [urlsByType]);
 
-  useEffect(()=>{
-    if(urlsToCall){
+  useEffect(() => {
+    if (urlsToCall) {
       setErrorExist(false);
     }
-  },[urlsToCall])
+  }, [urlsToCall]);
 
   // console.log(urlsToCall);
 
