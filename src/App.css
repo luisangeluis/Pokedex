@@ -197,6 +197,7 @@ body,
 }
 
 .pokemon-list .card img {
+  min-height: 8rem;
   max-height: 130px;
   margin-bottom: -3vh;
   position: relative;
@@ -672,6 +673,16 @@ body,
 
   .pokemon-details .card img {
     max-width: 70%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .pokemon-list .card {
+    min-height: 10rem;
+  }
+
+  .pokemon-list .img-fluid {
+    min-height: 5rem;
   }
 }
 

@@ -38,7 +38,7 @@ const SelectPokemonTypes = ({ setUrlsByType, resetSelect }) => {
           console.log(res.data.pokemon);
           let urls = [];
           res.data.pokemon.forEach((url) => {
-            console.log(url.pokemon.url);
+            // console.log(url.pokemon.url);
             urls.push(url.pokemon.url);
           });
           setUrlsByType(urls);
