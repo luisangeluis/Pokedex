@@ -50,7 +50,7 @@ const SelectPokemonTypes = ({ setUrlsByType, resetSelect }) => {
 
     if (urlType == 'todos') {
       axios
-        .get('https://pokeapi.co/api/v2/pokemon/?limit=10&offset=0')
+        .get('https://pokeapi.co/api/v2/pokemon/?limit=10000&offset=0')
         .then((res) => {
           let urls = [];
 

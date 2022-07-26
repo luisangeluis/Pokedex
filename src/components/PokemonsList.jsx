@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Pagination from './Pagination';
 import PokemonCard from './PokemonCard';
 import ReactPaginate from 'react-paginate';
-import Loader from './Loader';
 
 const PokemonsList = ({ urlsToCall, setErrorExist, errorExist }) => {
   const [currentPage, setCurrentPage] = useState(0);
@@ -22,10 +20,15 @@ const PokemonsList = ({ urlsToCall, setErrorExist, errorExist }) => {
 
   const changePage = ({ selected }) => {
     setCurrentPage(selected);
+
+    if (selected > pageCount) {
+      setCurrentPage(0);
+    }
   };
 
   useEffect(() => {
     pageCount = Math.ceil(urlsToCall.length / pokemonsPerPage);
+    setCurrentPage(0);
   }, [urlsToCall]);
 
   return (
