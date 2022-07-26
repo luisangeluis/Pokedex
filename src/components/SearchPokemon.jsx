@@ -26,7 +26,7 @@ const SearchPokemon = ({ setUrlsToCall, setResetSelect, resetSelect }) => {
             {...register('pokemonName', { required: true })}
             className="form-control"
           />
-          <button className="btn btn-login">Search</button>
+          <button className="btn btn-dark">Search</button>
         </div>
       </form>
     </div>

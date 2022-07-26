@@ -9,6 +9,10 @@ button {
   list-style-type: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 button:focus {
   box-shadow: none !important;
 }
@@ -110,12 +114,6 @@ body,
   transform: scale(1.05);
 }
 
-.btn-login {
-  /* background-color: rgb(89, 179, 136); */
-  background-color: rgba(0, 0, 0);
-  color: whitesmoke;
-}
-
 .btn-login:hover {
   font-weight: bold;
   cursor: pointer;
@@ -131,13 +129,12 @@ body,
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(237, 27, 36);
+  background-color: #edff21;
   border-radius: 7px;
 }
-
 .header > row {
-  flex-grow: 1;
-  height: 100%;
+  /* flex-grow: 1;
+  height: 100%; */
 }
 
 .header .main-title {
@@ -147,15 +144,8 @@ body,
   line-height: 0;
   letter-spacing: 5px;
   font-weight: bolder;
-  color: #edff21;
-  color: #212529;
-  color: rgb(237, 27, 36);
-  color: #ed1b24;
-  color: #00406f;
-
-  text-shadow: 3px 3px #00406f;
-  text-shadow: 1px 1px 3px #edff21;
-  /* background-color: #00406f; */
+  color: #000;
+  text-shadow: 7px 3px #00406f;
 }
 
 /************End header**********/
@@ -165,7 +155,7 @@ body,
 /**************************/
 .filters {
   min-height: 3rem;
-  background-color: whitesmoke;
+  background-color: #ed1b24;
   border-radius: 2rem;
 }
 
@@ -273,13 +263,18 @@ body,
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
-  color: rgb(237, 27, 36, 0.8);
+  background-color: #212529;
+  color: #ed1b24;
   width: 30px;
   height: 30px;
   border-radius: 10%;
 }
 
+.next-btn,
+.previous-btn {
+  color: #212529;
+  font-weight: bold;
+}
 /*********END PAGINATION**********/
 /******************************/
 
@@ -315,133 +310,353 @@ body,
 .bg-fire {
   /* fire type */
   background-color: #fe5000;
-  border: solid 7px #fe500050;
   color: #fe5000;
+
+  background: #fe5000; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #fe5000,
+    #fe500050
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #fe5000,
+    #fe500050
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .bg-grass {
   /* grass type */
   background-color: #84bd00;
-  border: solid 7px #84bd0050;
   color: #84bd00;
+
+  background: #84bd00; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #84bd00,
+    #84bd0050
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #84bd00,
+    #84bd0050
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .bg-bug {
   /* bug type */
   background-color: #009f4d;
-  border: solid 7px #009f4d50;
   color: #009f4d;
+
+  background: #009f4d; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #009f4d,
+    #009f4d50
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #009f4d,
+    #009f4d50
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .bg-water {
   /* water type */
   background-color: #0077c8;
-  border: solid 7px #0077c850;
   color: #0077c8;
+
+  background: #0077c8; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0077c8,
+    #0077c850
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0077c8,
+    #0077c850
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .bg-normal {
   /* normal type */
   background-color: #683d5a;
-  border: solid 7px #683d5a50;
   color: #683d5a;
+
+  background: #683d5a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #683d5a,
+    #683d5a50
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #683d5a,
+    #683d5a50
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .bg-fighting {
   /* fighting type */
   background-color: #bb1e10;
-  border: solid 7px #bb1e1050;
   color: #bb1e10;
+
+  background: #bb1e10; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #bb1e10,
+    #bb1e1050
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #bb1e10,
+    #bb1e1050
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .bg-poison {
   /* poison type */
   background-color: #49176d;
-  border: solid 7px #49176d50;
   color: #49176d;
+
+  background: #49176d; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #49176d,
+    #49176d50
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #49176d,
+    #49176d50
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .bg-ghost {
   /* ghost type */
   background-color: #00205b;
-  border: solid 7px #00205b50;
   color: #00205b;
+
+  background: #00205b; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #00205b,
+    #00205b50
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #00205b,
+    #00205b50
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .bg-rock {
   /* rock type */
   background-color: #caccd1;
-  border: solid 7px #caccd150;
   color: #caccd1;
+
+  background: #caccd1; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #caccd1,
+    #caccd150
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #caccd1,
+    #caccd150
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .bg-dark {
   /* dark type */
 
   background-color: #050f2c;
-  border: solid 7px #050f2c50;
   color: #050f2c;
+
+  background: #050f2c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #050f2c,
+    #050f2c50
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #050f2c,
+    #050f2c50
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .bg-ice {
   /* ice type */
   background-color: #74d2e7;
-  border: solid 7px #74d2e750;
   color: #74d2e7;
+
+  background: #74d2e7; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #74d2e7,
+    #74d2e750
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #74d2e7,
+    #74d2e750
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .bg-steel {
   background-color: #335238;
-  border: solid 7px #33523850;
   color: #335238;
+
+  background: #335238; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #335238,
+    #33523850
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #335238,
+    #33523850
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .bg-dragon {
   background-color: #0085ad;
-  border: solid 7px #0085ad50;
   color: #0085ad;
+
+  background: #0085ad; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0085ad,
+    #0085ad50
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0085ad,
+    #0085ad50
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .bg-fairy {
   background-color: #ff4f81;
-  border: solid 7px #ff4f8150;
   color: #ff4f81;
+
+  background: #ff4f81; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ff4f81,
+    #ff4f8150
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ff4f81,
+    #ff4f8150
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .bg-electric {
   background-color: #3369e7;
-  border: solid 7px #3369e750;
   color: #3369e7;
+
+  background: #3369e7; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #3369e7,
+    #3369e750
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #3369e7,
+    #3369e750
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .bg-ground {
   background-color: #ffc168;
-  border: solid 7px #ffc16850;
   color: #ffc168;
+
+  background: #ffc168; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffc168,
+    #ffc16850
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffc168,
+    #ffc16850
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .bg-flying {
   background-color: #efdf00;
-  border: solid 7px #efdf0050;
   color: #efdf00;
+
+  background: #efdf00; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #efdf00,
+    #efdf0050
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #efdf00,
+    #efdf0050
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .bg-psychic {
   background-color: #da1884;
-  border: solid 7px #da188450;
   color: #da1884;
+
+  background: #da1884; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #da1884,
+    #da188450
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #da1884,
+    #da188450
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .bg-unknow {
   background-color: #fefefe;
-  border: solid 7px #fefefe50;
   color: #fefefe;
+
+  background: #fefefe; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #fefefe,
+    #fefefe50
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #fefefe,
+    #fefefe50
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .bg-shadow {
   background-color: #caccd1;
-  border: solid 7px #caccd150;
   color: #caccd1;
+
+  background: #caccd1; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #caccd1,
+    #caccd150
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #caccd1,
+    #caccd150
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 /*****End***backgrounds**pokemon****/

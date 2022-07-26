@@ -41,7 +41,7 @@ const Home = () => {
   return (
     <section className="row">
       <div className="col-12">
-        <section className="row saludo my-2 my-md-3 p-2 p-md-3 rounded border border-3 border-light bg-dark text-white">
+        <section className="row saludo my-2 my-md-3 p-2 p-md-3 rounded border border-3 border-light text-white bg-dark">
           <div className="col-12">
             Welcome "<span className=".subtitle-2">{userName}</span>". Here you
             can find your favorite pokemon.
