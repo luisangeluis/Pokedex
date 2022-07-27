@@ -56,7 +56,7 @@ const Home = () => {
           </div>
           <div className="col-4 text-center d-flex justify-content-center align-items-center">
             <button className="btn btn-logout btn-sm" onClick={logOut}>
-              Cerrar sesion
+              Log Out
             </button>
           </div>
         </section>
