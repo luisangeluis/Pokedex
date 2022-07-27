@@ -1,13 +1,13 @@
-import React from 'react'
+import React from 'react';
 
 const Loader = () => {
   return (
-    <section className='loader'>
-      <div class="spinner-border" role="status">
-        <span class="visually-hidden">Loading...</span>
+    <section className="loader position-absolute">
+      <div className="spinner-border" role="status">
+        <span className="visually-hidden">Loading...</span>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Loader
+export default Loader;

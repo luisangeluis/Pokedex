@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
 
-const SelectPokemonTypes = ({ setUrlsPokemons, getPokemons, resetSelect }) => {
+const SelectPokemonTypes = ({ setUrlsByType, resetSelect }) => {
   const select = useRef(null);
   const [pokemonTypesOptions, setPokemonTypesOptions] = useState();
 
@@ -21,49 +21,86 @@ const SelectPokemonTypes = ({ setUrlsPokemons, getPokemons, resetSelect }) => {
     axios
       .get(url)
       .then((res) => {
-        console.log(res.data.results);
+        // console.log(res.data.results);
         setPokemonTypesOptions(res.data.results);
       })
       .catch((error) => console.log(error));
   };
 
-  const getPokemonsByType = (e) => {
-    // console.log(e.target.value);
-    let url = e.target.value;
+  const getUrlsByType = (e) => {
+    console.log(e.target.value);
+    let urlType = e.target.value;
 
-    if (url != '') {
-      if (url == 'todos') {
-        console.log('hola');
-        getPokemons();
-      } else {
-        axios
-          .get(url)
-          .then((res) => {
-            console.log(res.data.pokemon);
-            const urls = [];
-            res.data.pokemon.forEach((element) => {
-              // console.log(element.pokemon.url);
-              urls.push(element.pokemon.url);
-            });
-            // console.log(urls);
-            setUrlsPokemons(urls);
-          })
-          .catch((error) => console.log(error));
-      }
+    if (urlType !== '' && urlType != 'todos') {
+      axios
+        .get(urlType)
+        .then((res) => {
+          console.log(res.data.pokemon);
+          let urls = [];
+          res.data.pokemon.forEach((url) => {
+            // console.log(url.pokemon.url);
+            urls.push(url.pokemon.url);
+          });
+          setUrlsByType(urls);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+
+    if (urlType == 'todos') {
+      axios
+        .get('https://pokeapi.co/api/v2/pokemon/?limit=10000&offset=0')
+        .then((res) => {
+          let urls = [];
+
+          res.data.results.forEach((url) => {
+            urls.push(url.url);
+          });
+
+          setUrlsByType(urls);
+        })
+        .catch((error) => console.log(error));
     }
   };
 
+  // const getPokemonsByType = (e) => {
+  //   // console.log(e.target.value);
+  //   let url = e.target.value;
+
+  //   if (url != '') {
+  //     if (url == 'todos') {
+  //       console.log('hola');
+  //       getPokemons();
+  //     } else {
+  //       axios
+  //         .get(url)
+  //         .then((res) => {
+  //           console.log(res.data.pokemon);
+  //           const urls = [];
+  //           res.data.pokemon.forEach((element) => {
+  //             // console.log(element.pokemon.url);
+  //             urls.push(element.pokemon.url);
+  //           });
+  //           // console.log(urls);
+  //           setUrlsPokemons(urls);
+  //         })
+  //         .catch((error) => console.log(error));
+  //     }
+  //   }
+  // };
+
   const getResetSelect = () => {
-    console.log(select.current);
+    // console.log(select.current);
     select.current.value = '';
   };
 
   return (
     <div className="col-md-6 d-flex justify-content-center align-items-center p-2 p-md-3">
       <select
-        onChange={getPokemonsByType}
+        onChange={getUrlsByType}
         ref={select}
-        className="form-select w-50"
+        className="form-select w-md-50"
       >
         <option value="">Select a type</option>
         <option value="todos">All pokemons</option>

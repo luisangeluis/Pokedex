@@ -2,29 +2,20 @@ import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-const SearchPokemon = ({ setPokemonByName, resetSelect, setResetSelect,setIsLoading }) => {
+const SearchPokemon = ({ setUrlsToCall, setResetSelect, resetSelect }) => {
   const { register, handleSubmit } = useForm();
 
   const searchPokemon = (data) => {
     console.log(data.pokemonName);
-    let pokemonName = data.pokemonName;
+    let pokemonName = data.pokemonName.toLowerCase();
     const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
+    // setUrlByName(url);
+    setUrlsToCall([url]);
     setResetSelect(!resetSelect);
-    getPokemonByName(url);
   };
 
-  const getPokemonByName = (url) => {
-    axios
-      .get(url)
-      .then((res) => {
-        console.log(res.data);
-        setPokemonByName(res.data);
-      })
-      .catch((error) => console.log(error))
-      .finally(()=>{setIsLoading(false)});
-  };
   return (
-    <div className="col-md-6 d-flex justify-content-center align-items-center p-2 p-md-3 rounded-2 w-50  w-md-75 mx-auto">
+    <div className="col-md-6 d-flex justify-content-center align-items-center p-2 p-md-3 rounded-2 w-md-75 mx-auto">
       <form onSubmit={handleSubmit(searchPokemon)}>
         <div className="input-group">
           <input
@@ -35,7 +26,7 @@ const SearchPokemon = ({ setPokemonByName, resetSelect, setResetSelect,setIsLoad
             {...register('pokemonName', { required: true })}
             className="form-control"
           />
-          <button className="btn btn-login">Search</button>
+          <button className="btn btn-dark">Search</button>
         </div>
       </form>
     </div>

@@ -1,91 +1,83 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import useGetAllUrls from '../hooks/useGetAllUrls';
 import Loader from './Loader';
 import PokemonsList from './PokemonsList';
 import SearchPokemon from './SearchPokemon';
 import SelectPokemonTypes from './SelectPokemonTypes';
 
 const Home = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
+  //Loader
+  const [errorExist, setErrorExist] = useState(false);
   //Redux
   const userName = useSelector((state) => state.userName);
-  const [urlsPokemons, setUrlsPokemons] = useState();
-  const [pokemonByName, setPokemonByName] = useState();
+  //Custom Hook
+  const [allUrls] = useGetAllUrls();
+  //useState
+  const [urlsByType, setUrlsByType] = useState();
+  const [urlsToCall, setUrlsToCall] = useState();
   const [resetSelect, setResetSelect] = useState(false);
+  //useNavigate
+  const navigate = useNavigate();
 
   useEffect(() => {
-    if (!pokemonByName && !urlsPokemons) {
-      getPokemons();
+    if (allUrls) {
+      setUrlsToCall(allUrls);
     }
-
-
-  }, []);
+  }, [allUrls]);
 
   useEffect(() => {
-    if (urlsPokemons) {
-      setPokemonByName();
+    if (urlsByType) {
+      setUrlsToCall(urlsByType);
     }
-  }, [urlsPokemons]);
+  }, [urlsByType]);
 
   useEffect(() => {
-    if (pokemonByName) {
-      setIsLoading(false)
-    }else{
-      setIsLoading(true)
-
+    if (urlsToCall) {
+      setErrorExist(false);
     }
-  }, [pokemonByName])
+  }, [urlsToCall]);
 
-  const getPokemons = () => {
-    console.log('obteniendo todos los pokemon');
-    axios
-      .get('https://pokeapi.co/api/v2/pokemon/?limit=3000&offset=0')
-      .then((res) => {
-
-        let urls = [];
-        res.data.results.forEach((url) => {
-          urls.push(url.url);
-        });
-        setUrlsPokemons(urls);
-
-      })
-      .catch((error) => console.log(error))
-      .finally(() => setIsLoading(false));
+  const logOut = () => {
+    localStorage.removeItem('userName');
+    navigate('/');
+    // console.log('logOut');
   };
+  // console.log(urlsToCall);
+
   return (
     <section className="row">
       <div className="col-12">
-        <section className="row saludo my-2 my-md-3 p-2 p-md-3 rounded border border-3 border-light">
-          <div className="col-12">
+        <section className="row saludo my-2 my-md-3 p-2 p-md-3 rounded border border-3 border-light text-white bg-dark">
+          <div className="col-8">
             Welcome "<span className=".subtitle-2">{userName}</span>". Here you
             can find your favorite pokemon.
           </div>
+          <div className="col-4 text-center d-flex justify-content-center align-items-center">
+            <button className="btn btn-logout btn-sm" onClick={logOut}>
+              Log Out
+            </button>
+          </div>
         </section>
-        <section className="row filters p-2 p-md-3">
+        <section className="row filters p-2 p-md-3 border border-light border-3">
           <SearchPokemon
-            setPokemonByName={setPokemonByName}
-            resetSelect={resetSelect}
+            setUrlsToCall={setUrlsToCall}
             setResetSelect={setResetSelect}
-            setIsLoading={setIsLoading}
+            resetSelect={resetSelect}
           />
           <SelectPokemonTypes
-            setUrlsPokemons={setUrlsPokemons}
-            getPokemons={getPokemons}
+            setUrlsByType={setUrlsByType}
             resetSelect={resetSelect}
           />
         </section>
-        {
-          isLoading
-            ? <Loader />
-            :
-            pokemonByName ? (
-              <PokemonsList pokemonByName={pokemonByName} />
-            ) : (
-              urlsPokemons && <PokemonsList urlsPokemons={urlsPokemons} />
-            )
-        }
+        {urlsToCall && (
+          <PokemonsList
+            urlsToCall={urlsToCall}
+            setErrorExist={setErrorExist}
+            errorExist={errorExist}
+          />
+        )}
       </div>
     </section>
   );
