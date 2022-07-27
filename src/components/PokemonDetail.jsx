@@ -75,7 +75,7 @@ const PokemonDetail = () => {
               <div className="col-md-6 my-2 my-md-3">
                 <div className="row">
                   <div className="col-12">
-                    <section className="card p-2 p-md-3">
+                    <section className="card p-2 p-md-3 border border-2">
                       <div className="card-body">
                         <div className="card-title m-0 fw-bold">Type</div>
                         <ul className="d-flex justify-content-center align-items-center flex-wrap">
@@ -97,7 +97,7 @@ const PokemonDetail = () => {
               <div className="col-md-6 my-2 my-md-3">
                 <div className="row">
                   <div className="col-12">
-                    <section className="card p-2 p-md-3">
+                    <section className="card p-2 p-md-3 border border-2">
                       <div className="card-body">
                         <div className="card-title m-0 fw-bold">Habilities</div>
                         <ul className="d-flex justify-content-center align-items-center flex-wrap">
@@ -106,7 +106,9 @@ const PokemonDetail = () => {
                               className="p-2 p-md-3"
                               key={ability.ability.name}
                             >
-                              <button className={`btn border border-secondary`}>
+                              <button
+                                className={`btn border border-light border-2`}
+                              >
                                 {ability.ability.name}
                               </button>
                             </li>
@@ -122,16 +124,14 @@ const PokemonDetail = () => {
           <div className="col-md-4 my-2 my-md-3">
             <div className="row">
               <div className="col-12">
-                <section
-                  className={`card movements bg-${pokemon?.types[0].type.name}`}
-                >
-                  <div className="card-body text-dark bg-light">
+                <section className={`card movements`}>
+                  <div className="card-body text-white">
                     <div className="card-title text-center fw-bold">
                       <hr className="d-inline w-50" /> Movements
                     </div>
-                    <ul>
+                    <ul className="text-dark fw-bold">
                       {pokemon?.moves.map((move) => (
-                        <li key={move.move.name}>
+                        <li key={move.move.name} className="bg-light">
                           {move.move.name} <hr />{' '}
                         </li>
                       ))}
