@@ -74,6 +74,8 @@ body {
 .login {
   min-height: 100vh;
   background-color: #00406f;
+  background-image: linear-gradient(106deg, #002d62 0%, #7cb9e8 100%);
+
   /* background-color: whitesmoke; */
 }
 
@@ -81,6 +83,8 @@ body {
   min-height: 100%;
   max-width: 80%;
   box-sizing: border-box;
+  padding: 1rem;
+  background-image: linear-gradient(106deg, #002d62 0%, #7cb9e8 100%);
 }
 .login .main-title {
 }
@@ -100,7 +104,8 @@ body {
   word-wrap: break-word;
 }
 .login .card {
-  background-color: #00406f;
+  /* background-image: linear-gradient(106deg, #002d62 0%, #7cb9e8 100%); */
+
   border: none;
 }
 
