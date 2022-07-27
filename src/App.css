@@ -38,12 +38,30 @@ html {
   position: relative;
 }
 
+body {
+  /* height: 100%;
+  width: 100%; */
+  /* background-image: linear-gradient(106deg, #00406f 0%, #ff2525 100%);
+  min-height: 100%;
+  min-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; */
+}
+
+#root {
+}
+
 body,
 #root,
 .App {
-  /* background-color: rgb(237, 27, 36); */
+  /* background-image: linear-gradient(106deg, #00406f 0%, #ff2525 100%); */
   background-color: #00406f;
-  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  min-height: 100% !important;
   width: 100%;
   position: absolute;
   top: 0;
@@ -59,10 +77,8 @@ body,
   line-height: 0.5em;
   letter-spacing: 10px;
   font-weight: bold;
-  color: black;
-  text-shadow: 3px 3px #00406f;
-
-  background-color: #edff21;
+  color: #000000;
+  background-color: #ed1b24;
 }
 /***********Login***********/
 /**************************/
@@ -75,13 +91,14 @@ body,
 
 .login > .container {
   min-height: 100%;
-  box-sizing: border-box;
   max-width: 80%;
+  box-sizing: border-box;
 }
 .login .main-title {
 }
+
 .subtitle-1 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
@@ -90,15 +107,19 @@ body,
   font-weight: bold;
 }
 
+.login {
+  word-break: keep-all;
+  word-wrap: break-word;
+}
 .login .card {
   background-color: #00406f;
-  /* background-color: whitesmoke; */
   border: none;
 }
 
 .login .card .card-body {
   color: black;
-  background-color: rgb(237, 27, 36);
+  /* background-color: rgb(237, 27, 36); */
+  background-color: #ed1b24;
   height: 100%;
 }
 
@@ -129,12 +150,8 @@ body,
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #edff21;
+  background-color: #ed1b24;
   border-radius: 7px;
-}
-.header > row {
-  /* flex-grow: 1;
-  height: 100%; */
 }
 
 .header .main-title {
@@ -145,7 +162,6 @@ body,
   letter-spacing: 5px;
   font-weight: bolder;
   color: #000;
-  text-shadow: 7px 3px #00406f;
 }
 
 /************End header**********/
@@ -671,8 +687,13 @@ body,
 /**************************/
 
 @media screen and (min-width: 576px) {
+  .subtitle-1 {
+    font-size: 3rem;
+    /* word-break: keep-all; */
+  }
   .login .main-title {
-    font-size: 4rem;
+    font-size: 3.5rem;
+    /* padding: 10rem 10rem; */
   }
   .pokemon-details {
     margin-top: 7rem;

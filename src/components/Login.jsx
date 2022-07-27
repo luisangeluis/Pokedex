@@ -29,8 +29,8 @@ const Login = () => {
   };
   return (
     <section className="login d-flex justify-content-center align-items-center">
-      <div className="container login-container d-flex flex-column text-center ">
-        <h1 className="main-title my-2 my-md-3 p-2 p-md-3 mx-auto rounded-pill border border-2 border-dark">
+      <div className="container login-container d-flex flex-column text-center border border-2 rounded">
+        <h1 className="main-title my-2 my-md-3 p-3 p-md-4 mx-auto rounded-pill border border-2 border-light text-center">
           Pokemon
         </h1>
         <div className="row">

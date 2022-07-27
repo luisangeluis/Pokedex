@@ -47,7 +47,7 @@ const Home = () => {
             can find your favorite pokemon.
           </div>
         </section>
-        <section className="row filters p-2 p-md-3">
+        <section className="row filters p-2 p-md-3 border border-light border-3">
           <SearchPokemon
             setUrlsToCall={setUrlsToCall}
             setResetSelect={setResetSelect}
