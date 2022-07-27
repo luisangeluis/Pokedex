@@ -20,11 +20,15 @@ const Login = () => {
   useEffect(() => {
     // console.log('Naciendo');
     // dispatch(setUserName(null));
+    if (localStorage.getItem('userName')) {
+      navigate('/pokedex');
+    }
   }, []);
 
   const makeUserName = (data) => {
     // console.log(data.userName);
     dispatch(setUserName(data.userName));
+    localStorage.setItem('userName', data.userName);
     navigate('/pokedex');
   };
   return (

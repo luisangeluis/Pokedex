@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import useGetAllUrls from '../hooks/useGetAllUrls';
 import Loader from './Loader';
 import PokemonsList from './PokemonsList';
@@ -17,6 +18,8 @@ const Home = () => {
   const [urlsByType, setUrlsByType] = useState();
   const [urlsToCall, setUrlsToCall] = useState();
   const [resetSelect, setResetSelect] = useState(false);
+  //useNavigate
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (allUrls) {
@@ -36,15 +39,25 @@ const Home = () => {
     }
   }, [urlsToCall]);
 
+  const logOut = () => {
+    localStorage.removeItem('userName');
+    navigate('/');
+    // console.log('logOut');
+  };
   // console.log(urlsToCall);
 
   return (
     <section className="row">
       <div className="col-12">
         <section className="row saludo my-2 my-md-3 p-2 p-md-3 rounded border border-3 border-light text-white bg-dark">
-          <div className="col-12">
+          <div className="col-8">
             Welcome "<span className=".subtitle-2">{userName}</span>". Here you
             can find your favorite pokemon.
+          </div>
+          <div className="col-4 text-center d-flex justify-content-center align-items-center">
+            <button className="btn btn-logout btn-sm" onClick={logOut}>
+              Cerrar sesion
+            </button>
           </div>
         </section>
         <section className="row filters p-2 p-md-3 border border-light border-3">

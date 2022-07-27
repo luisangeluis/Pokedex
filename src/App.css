@@ -190,6 +190,17 @@ body,
   color: rgb(237, 27, 36);
 }
 
+.btn-logout {
+  background-color: #ffffff;
+  color: #59b388;
+  font-weight: bold;
+}
+.btn-logout:hover {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+  box-shadow: 0 0 5px 2px silver;
+  color: #59b388;
+}
 .pokemon-list {
   padding: 0 1rem;
 }

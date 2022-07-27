@@ -11,16 +11,22 @@ function App() {
   const userName = useSelector((state) => state.userName);
   const navigate = useNavigate();
   useEffect(() => {
-    if (userName) {
+    if (localStorage.getItem('userName')) {
       navigate('/pokedex');
     }
-  }, [userName]);
+  }, [localStorage.getItem('userName')]);
 
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route element={<MainLayout isLogged={userName ? true : false} />}>
+        <Route
+          element={
+            <MainLayout
+              isLogged={localStorage.getItem('userName') ? true : false}
+            />
+          }
+        >
           <Route path="/pokedex/" element={<Home />} />
           <Route path="/pokedex/:id" element={<PokemonDetail />} />
           <Route path="/*" element={<h2>Ruta no existe</h2>} />
