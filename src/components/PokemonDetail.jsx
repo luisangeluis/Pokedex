@@ -75,7 +75,10 @@ const PokemonDetail = () => {
               <div className="col-md-6 my-2 my-md-3">
                 <div className="row">
                   <div className="col-12">
-                    <section className="card p-2 p-md-3 border border-2">
+                    <section
+                      className="card p-2 p-md-3 border border-2 text-white"
+                      style={{ backgroundColor: '#212529' }}
+                    >
                       <div className="card-body">
                         <div className="card-title m-0 fw-bold">Type</div>
                         <ul className="d-flex justify-content-center align-items-center flex-wrap">
@@ -97,7 +100,10 @@ const PokemonDetail = () => {
               <div className="col-md-6 my-2 my-md-3">
                 <div className="row">
                   <div className="col-12">
-                    <section className="card p-2 p-md-3 border border-2">
+                    <section
+                      className="card p-2 p-md-3 border border-2 text-white"
+                      style={{ backgroundColor: '#212529' }}
+                    >
                       <div className="card-body">
                         <div className="card-title m-0 fw-bold">Habilities</div>
                         <ul className="d-flex justify-content-center align-items-center flex-wrap">
@@ -107,7 +113,7 @@ const PokemonDetail = () => {
                               key={ability.ability.name}
                             >
                               <button
-                                className={`btn border border-light border-2`}
+                                className={`btn border border-light border-2 text-white`}
                               >
                                 {ability.ability.name}
                               </button>
