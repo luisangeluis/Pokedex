@@ -61,7 +61,7 @@ const Login = () => {
                           type="text"
                           placeholder="Your name is"
                           {...register('userName', { required: true })}
-                          className="form-control"
+                          className="form-control w-md-50"
                         />
                         {errors.userName?.type === 'required' && (
                           <p className="fw-bold">First name is required</p>

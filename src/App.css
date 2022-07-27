@@ -734,6 +734,11 @@ body {
     /* max-height: 90%; */
   }
 
+  .login .card input {
+    width: 75%;
+    margin: auto auto;
+  }
+
   .main-title {
     /* font-size: 10rem; */
   }
