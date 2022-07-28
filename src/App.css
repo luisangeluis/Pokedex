@@ -65,8 +65,8 @@ body {
   line-height: 0.5em;
   letter-spacing: 10px;
   font-weight: bold;
-  color: #000000;
-  background-color: #ed1b24;
+  color: lightgray;
+  background-color: #003551;
 }
 /***********Login***********/
 /**************************/
@@ -106,12 +106,12 @@ body {
 .login .card {
   border: none;
   background-color: inherit;
+  /* background-color: #00406f50; */
 }
 
 .login .card .card-body {
-  color: black;
-  /* background-color: rgb(237, 27, 36); */
-  background-color: #ed1b24;
+  color: lightgray;
+  background-color: #003551;
   height: 100%;
 }
 
@@ -142,6 +142,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #ed1b24;
+  background-color: #003551;
   border-radius: 7px;
   /* margin-top: 1rem; */
 }
@@ -154,6 +155,7 @@ body {
   letter-spacing: 5px;
   font-weight: bolder;
   color: #000;
+  color: lightgray;
 }
 
 /************End header**********/
@@ -163,7 +165,8 @@ body {
 /**************************/
 .filters {
   min-height: 3rem;
-  background-color: #ed1b24;
+  color: lightgray;
+  background-color: #003551;
   border-radius: 2rem;
 }
 
@@ -184,7 +187,7 @@ body {
 
 .btn-logout {
   background-color: #ffffff;
-  color: #59b388;
+  /* color: #; */
   font-weight: bold;
 }
 .btn-logout:hover {
@@ -201,6 +204,8 @@ body {
   min-height: 300px;
   max-height: 600px;
   transition: all 500ms;
+  box-shadow: 0 0 3px 2px silver;
+
 }
 
 .pokemon-list .card:hover {

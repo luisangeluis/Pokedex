@@ -130,7 +130,7 @@ const PokemonDetail = () => {
           <div className="col-md-4 my-2 my-md-3">
             <div className="row">
               <div className="col-12">
-                <section className={`card movements`}>
+                <section className={`card movements bg-${pokemon?.types[0].type.name}`}>
                   <div className="card-body text-white">
                     <div className="card-title text-center fw-bold">
                       <hr className="d-inline w-50" /> Movements
